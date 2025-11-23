@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 - YuJin Portfolio</title>
+    <link rel="stylesheet" href="./assets/styles.css"> 
+    <link rel="stylesheet" href="./assets/projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght+100;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        
+        <div class="nav-container">
+            <a href="./index.html" class="nav-logo"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="./index.html">HOME</a></li>
+                <li><a class="nav-link" href="./about.html">ABOUT</a></li>
+                <li><a class="nav-link active" href="./projects.html">PROJECT</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    <section class="projects-section">
+        <div class="container-full"> 
+            
+            <div class="project-tabs-wrap">
+                <button class="project-tab-btn active" data-project="metraforge">MetraForge AI</button>
+                <button class="project-tab-btn" data-project="smartstock">SmartStock AI</button>
+                <button class="project-tab-btn" data-project="tensecond">10-Second Challenge</button>
+            </div>
+        </div>
+
+        <div class="projects-container">
+
+            <div class="project-item active" data-project="metraforge">
+                
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">K-AI 경진대회 출품</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">제조 품질 시스템</span>
+                    </div>
+                    <h1>MetraForge AI</h1>
+                    <p class="project-subtitle">AI 기반 지능형 금속가공 품질 향상 시스템</p>
+                    <p class="project-summary">금속 압출 공정 불량을 사전 탐지하는 Tabular + TCN 하이브리드 AI 품질보증 시스템입니다. 시계열 센서 데이터를 구조화하여 예측 가능성으로 전환, 경험 기반 판단을 데이터 기반 조기 경보 시스템으로 혁신했습니다.</p>
+                </div>
+                
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <div class="project-placeholder">
+                            <p>준비중입니다</p>
+                        </div>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="./docs/metraforge_final_report.pdf" class="btn btn-primary">최종 보고서</a>
+                        <a href="./docs/metraforge_presentation.pdf" class="btn btn-secondary">발표 자료</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-metraforge" class="sticky-nav-item active" data-section="strategy-metraforge">설계 전략</a>
+                        <a href="#metrics-metraforge" class="sticky-nav-item" data-section="metrics-metraforge">주요 성과</a>
+                        <a href="#tech-metraforge" class="sticky-nav-item" data-section="tech-metraforge">기술 구성</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    
+                    <div class="project-planning highlight-section" id="strategy-metraforge"> 
+                        <h3 class="project-section-title">프로젝트 설계 전략 (PM Approach)</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">현장의 실질적 문제 정의</div>
+                                <p class="planning-card-text">FP(오탐)를 극단적으로 통제하여 현장의 경보 피로도를 낮추는 실질적 가치 창출 구조 기획 및 운영 정책 확립</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">하이브리드 모델 전략 기획</div>
+                                <p class="planning-card-text">정적(RandomForest) + 시계열(TCN) 투 트랙 앙상블 전략으로 예측 정밀도를 향상하고 안정성 확보</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">XAI 기반 신뢰도 확보</div>
+                                <p class="planning-card-text">SHAP 기반으로 로컬 피처 중요도를 제시하여, 현장 작업자의 AI 시스템 신뢰도 확보 전략 수립</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">선제적 리드타임 확보</div>
+                                <p class="planning-card-text">공정 불량 발생 전 최소 1분 이상의 선제적 탐지 리드타임을 확보하여 선제적 대응 가능성 설계</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-metraforge"> 
+                        <h3 class="project-section-title">주요 성과 지표 (AI Model Metrics)</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">0.9667</div>
+                                <div class="metric-label">Soft 앙상블 PR-AUC</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">0.9983</div>
+                                <div class="metric-label">Soft 앙상블 ROC-AUC</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">1.3%→0%</div>
+                                <div class="metric-label">결측률 개선 (품질지수 100%)</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">≥1분</div>
+                                <div class="metric-label">탐지 리드타임 중앙값</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-metraforge"> 
+                        <h3 class="project-section-title">기술 및 데이터 구성 (Tech Stack & Data)</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">데이터</span>
+                                <span class="tech-value">PLC 5초 로그 · 1.7만행×20열</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">모델</span>
+                                <span class="tech-value">TCN+Tabular Soft·Cascade 앙상블</span> 
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">전처리</span>
+                                <span class="tech-value">이상탐지 · 정규화 · 결측률 0% 개선</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">개발환경</span>
+                                <span class="tech-value">FastAPI, Streamlit 기반 MVP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-project="smartstock">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">B2B 수요예측 솔루션</span>
+                        <span class="project-badge">2024</span>
+                        <span class="project-badge">AIX 프로젝트</span>
+                    </div>
+                    <h1>SmartStock AI</h1>
+                    <p class="project-subtitle">B2B 제조·유통사를 위한 AI 수요예측 + 재고정책 통합 솔루션</p>
+                    <p class="project-summary">ERP/WMS 연동이 불가능한 기업도 CSV 업로드만으로 자동정제, 예측, 최적 발주정책 계산을 수행합니다. 중소 제조·유통사의 시스템 한계를 해결하고 Human + AI 협업으로 비용 절감 및 최적 재고 관리를 지원합니다.</p>
+                </div>
+                
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <img src="./docs/smartstock.png" alt="SmartStock AI 대시보드">
+                    </div>
+                    <div class="project-actions container">
+                        <a href="./docs/smartstock_final_report.pdf" class="btn btn-primary">최종 보고서</a>
+                        <a href="./docs/smartstock_planning.pdf" class="btn btn-secondary">기획서</a>
+                        <a href="./docs/smartstock_user_guide.pdf" class="btn btn-secondary">사용자 가이드</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-smartstock" class="sticky-nav-item active" data-section="strategy-smartstock">설계 전략</a>
+                        <a href="#metrics-smartstock" class="sticky-nav-item" data-section="metrics-smartstock">주요 성과</a>
+                        <a href="#tech-smartstock" class="sticky-nav-item" data-section="tech-smartstock">기술 구성</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    
+                    <div class="project-planning highlight-section" id="strategy-smartstock"> 
+                        <h3 class="project-section-title">프로젝트 설계 전략 (PM Approach)</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">경계 없는 솔루션 설계</div>
+                                <p class="planning-card-text">WMS/ERP 연동 없이 CSV 업로드만으로 전 과정이 자동화되는, 중소기업 맞춤형 플랫폼 구조 기획</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Hyper-Parameter 자동 탐색</div>
+                                <p class="planning-card-text">재고 정책(안전재고, 발주점, 발주량)의 최적값을 AI 모델의 예측 결과에 따라 자동으로 계산 및 제안</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">데이터 품질의 자동화</div>
+                                <p class="planning-card-text">결측치, 이상치, 중복 데이터 등의 품질 이슈를 업로드 즉시 자동 감지하고 정제하여 분석 효율성 확보</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">정책 시뮬레이션 환경</div>
+                                <p class="planning-card-text">AI Copilot을 통해 Planner가 자연어로 데이터를 질의하고 가상의 정책 시뮬레이션을 수행하도록 설계</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-smartstock"> 
+                        <h3 class="project-section-title">주요 성과 지표 (Business Metrics)</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">14.2%</div>
+                                <div class="metric-label">WAPE (예측 오차율)</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">96.3%</div>
+                                <div class="metric-label">Fill Rate (충족률)</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">20%</div>
+                                <div class="metric-label">과잉 재고 감소</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">70%</div>
+                                <div class="metric-label">업무 시간 절감</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-smartstock"> 
+                        <h3 class="project-section-title">기술 및 데이터 구성 (Tech Stack & Data)</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">프론트엔드</span>
+                                <span class="tech-value">React · TypeScript · D3.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">백엔드</span>
+                                <span class="tech-value">FastAPI · MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI 엔진</span>
+                                <span class="tech-value">LSTM + CNN Hybrid Forecast</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">핵심 정책</span>
+                                <span class="tech-value">SS · ROP · EOQ 정책 · MLflow 추적</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-item" data-project="tensecond">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">게이미피케이션 포즈 인식</span>
+                        <span class="project-badge">2024</span>
+                        <span class="project-badge">Rapid Prototype</span>
+                    </div>
+                    <h1>10-Second Challenge</h1>
+                    <p class="project-subtitle">10초 내 AI 반응을 목표로 한 초경량 인터랙티브 프로토타입</p>
+                    <p class="project-summary">10초 이내 실시간 포즈 인식을 목표로 한 초경량 프로토타입입니다. YOLOv8 기반의 실시간 인식과 게이미피케이션 UX를 결합하여 사용자 참여를 극대화하는 인터랙티브 체험을 제공합니다. (R&R: 기획팀, 디자인팀)</p>
+                </div>
+                
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <video controls width="100%" height="100%">
+                            <source src="./docs/10sec_resize.mp4" type="video/mp4">
+                            브라우저가 비디오 태그를 지원하지 않습니다.
+                        </video>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="./docs/10sec_presentation.pdf" class="btn btn-primary">발표 자료</a>
+                        <a href="./docs/10sec_resize.mp4" class="btn btn-secondary" download>데모 영상 받기</a>
+                        <a href="./docs/10sec_WBS_R&R.pdf" class="btn btn-secondary" download>R&R & WBS</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-tensecond" class="sticky-nav-item active" data-section="strategy-tensecond">설계 전략</a>
+                        <a href="#metrics-tensecond" class="sticky-nav-item" data-section="metrics-tensecond">주요 성과</a>
+                        <a href="#tech-tensecond" class="sticky-nav-item" data-section="tech-tensecond">기술 구성</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    
+                    <div class="project-planning highlight-section" id="strategy-tensecond"> 
+                        <h3 class="project-section-title">프로젝트 설계 전략 (Prototype Approach)</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">10초 반응 속도 목표</div>
+                                <p class="planning-card-text">AI 인식부터 결과 도출까지 10초 이내 완료를 목표로 삼아 체험 만족도를 극대화하도록 설계</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">데이터 경량화 및 최적화</div>
+                                <p class="planning-card-text">프로토타입 환경에 맞춰 추론 속도와 정확도를 모두 확보할 수 있는 YOLOv8 모델 경량화 전략 적용</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">참여자 확장성 고려</div>
+                                <p class="planning-card-text">웹캠 기반 인터랙션 및 리더보드 시스템을 구현하여, 현장 이벤트 등 다양한 마케팅 활용 가능성 확보</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">직관적인 UX/UI</div>
+                                <p class="planning-card-text">챌린지 형식의 게이미피케이션 요소를 결합하여 사용자 접근성과 재미 요소를 강화</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-tensecond"> 
+                        <h3 class="project-section-title">주요 성과 지표 (Performance & UX)</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">포즈 인식 정확도</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">≤10초</div>
+                                <div class="metric-label">AI 최종 반응 시간</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">2,500회</div>
+                                <div class="metric-label">데모 세션 진행</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">4.5/5</div>
+                                <div class="metric-label">사용자 만족도</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-tensecond"> 
+                        <h3 class="project-section-title">기술 및 환경 구성 (Tech Stack)</h3>
+        
+                        <div class="tech-items-grid five-item-layout"> 
+                            <div class="tech-item">
+                                <span class="tech-category">개발 환경</span>
+                                <span class="tech-value">Python · Streamlit</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI 모델</span>
+                                <span class="tech-value">YOLOv8 실시간 포즈 인식</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">UX 구현</span>
+                                <span class="tech-value">게이미피케이션 · 리더보드 시스템</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">기능</span>
+                                <span class="tech-value">세션 기록 · 참여자별 성과 추적</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">데이터</span>
+                                <span class="tech-value">웹캠 스트리밍 데이터</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="padding:40px 0; text-align:center; color:#b0b0b0; border-top:1px solid rgba(255,255,255,.1)">
+        <div class="container">
+            <div>© 2025 Yujin Lee. All rights reserved.</div>
+            <div style="margin-top:8px; font-size:.95rem; color:#9aa0a6">
+              GitHub: <a href="https://github.com/Reason-jin" target="_blank" style="color:#9DB7D5">Reason-jin</a> ·
+              Email: <a href="mailto:yujin2ee@naver.com" style="color:#9DB7D5">yujin2ee@naver.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/projects.js"></script>
+
+    <!-- Nano-YJ AI Assistant Button -->
+    <button class="nano-yj-launch yj-style-c" aria-label="Nano-YJ 시작하기" data-tip="Nano YJ">
+      <div class="nano-yj-icon">
+        <div class="head"></div>
+        <div class="antenna"></div>
+        <div class="body"></div>
+      </div>
+    </button>
+
+    <!-- Nano-YJ Overlay & Modal -->
+    <div class="nano-overlay"></div>
+    <div class="nano-modal">
+      <div class="nano-header">
+        <div class="title">Nano-YJ — 기획 역량 체험</div>
+        <button class="nano-close">닫기</button>
+      </div>
+      <div class="nano-body"></div>
+      <div class="nano-input">
+        <input placeholder="메시지를 입력하세요 (데모)" />
+        <button>보내기</button>
+      </div>
+    </div>
+
+    <!-- Nano-YJ Scripts -->
+    <script src="./assets/chatbot-scenarios.js"></script>
+    <script src="./assets/chatbot-ui.js"></script>
+</body>
+</html>

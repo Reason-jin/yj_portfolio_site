@@ -1,0 +1,234 @@
+/* Dark + Purple Gradient / Minimal Neon-free / Subtle Glass */
+:root{
+  --bg-black:#0c0d12;
+  --bg-deep:#10131a;
+  --purple:#6f4cff;           /* 메인 보라 */
+  --purple-soft:rgba(111,76,255,.18);
+  --text:#eef1f7;
+  --text-sub:#b6c0cf;
+  --glass:rgba(255,255,255,.05);
+  --glass-bd:rgba(255,255,255,.10);
+  --line:rgba(255,255,255,.08);
+}
+
+.about-body{
+  color:var(--text);
+  background: var(--bg-black);
+  overflow-x:hidden; margin:0;
+  font-family:"Pretendard","Inter",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans KR",sans-serif;
+}
+
+/* ▼ 블랙→보라 그라데이션: 페이지 전체 */
+.bg-gradient{
+  position:fixed; inset:-10vmax; z-index:-3; pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 15% -10%, var(--purple-soft), transparent 70%),
+    linear-gradient(180deg, var(--bg-black) 0%, var(--bg-deep) 100%);
+  filter:saturate(110%);
+}
+
+/* ▼ 먼지 파티클 레이어(캡처처럼 작은 원이 천천히 위로) */
+.dust-layer{ position:fixed; inset:0; z-index:-2; pointer-events:none; }
+.particle{
+  position:absolute; width:2px; height:2px; border-radius:50%;
+  background: rgba(160,130,255,.45);      /* 보라 한 톤만 */
+  animation: floatY linear infinite;
+  opacity:.35; filter: blur(.2px);
+}
+@keyframes floatY{
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: .35; }
+  90%  { opacity: .35; }
+  100% { transform: translateY(-120vh) translateX(18vw); opacity: 0; }
+}
+
+/* 공통 컨테이너 */
+.container{ max-width:1200px; margin:0 auto; padding:0 20px; }
+.page-space{ height:72px; }
+
+/* 헤더: 완전 불투명, 사진 없음 */
+.about-hero{
+  background:#0f1217;
+  border-bottom:1px solid var(--line);
+  padding:120px 0 100px;
+}
+.hero-inner{ display:flex; align-items:center; min-height:0; }
+.about-title{ margin:0 0 8px; font-size:3.2rem; font-weight:900; letter-spacing:-.04em; color:#f3f5fb; }
+.about-subtitle{ margin:0; font-size:1.25rem; color:var(--text-sub); }
+
+/* 섹션 공통 */
+.sec{ padding:100px 0; border-bottom:1px solid var(--line); }
+.sec:last-child{ border-bottom:0; padding-bottom:120px; }
+.sec-header{ text-align:center; margin-bottom:56px; }
+.sec-num{ display:block; font-weight:900; color:#cbd2de; margin-bottom:10px; }
+.sec-title{ font-size:2.5rem; font-weight:800; letter-spacing:-.02em; margin:0; }
+
+/* Glass card */
+.card{
+  background: var(--glass);
+  border:1px solid var(--glass-bd);
+  border-radius:16px; padding:36px;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.35);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{ transform: translateY(-4px); box-shadow: 0 28px 64px rgba(0,0,0,.45); }
+.card.lg{ padding:48px; }
+.prose{ color:#e9edf5; line-height:1.8; }
+.h3{ font-size:1.5rem; font-weight:750; margin:0; }
+.muted{ color:var(--text-sub); }
+.muted-strong{ color:#d7dde6; }
+.lede{ font-size:1.14rem; }
+
+/* ✅ 인용문 밑줄 애니메이션(로드 시 1회) */
+.quote{
+  font-size:1.6rem; line-height:1.5; color:#e6e9f1;
+  margin-top:18px; padding-left:14px; border-left:4px solid var(--line);
+}
+.quote-underline{
+  position:relative;
+  background-image: linear-gradient(to right, rgba(160,130,255,.5), rgba(160,130,255,.5));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  animation: drawUnderline 1.4s ease-out .15s both;
+}
+@keyframes drawUnderline{
+  to { background-size: 100% 2px; }
+}
+
+/* 02: 3열 — 일부 카드만 더 은은한 글래스 */
+.triple-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.card.subtle{ background: rgba(255,255,255,.035); border-color: rgba(255,255,255,.08); }
+
+/* 03: 프로세스 */
+.process{
+  display:grid; grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:center; gap:22px; list-style:none; margin:0; padding:0;
+}
+.step-card{ text-align:center; }
+.step-dot{
+  width:10px; height:10px; border-radius:50%; background:#cfd6e3; margin:0 auto 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,.08) inset;
+}
+.arrow-line{ display:block; width:72px; height:1px; background: linear-gradient(90deg,transparent,#bac2d0,transparent); }
+
+/* 04: split / emphasis glass */
+.split-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.card.emphasis{
+  background: rgba(17,18,27,.6);
+  border-color: rgba(160,130,255,.22);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(160,130,255,.08) inset;
+}
+.checklist{ list-style:none; padding:0; margin:0; }
+.checklist li{ position:relative; padding-left:20px; margin-bottom:8px; color:#d9dee7; }
+.checklist li::before{ content:"-"; position:absolute; left:0; color:#9aa2ad; }
+
+/* ▼ 여백/타이포 보강(요청 반영) */
+.mini-3{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:32px; }
+.mini-3.spaced{ margin-top:44px; }            /* 원형 UI와 하단 텍스트 간격 확보 */
+.pill{
+  padding:12px 22px; border-radius:9999px;
+  background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px); color:#e1e6ef; font-weight:700;
+}
+.closing-text{ text-align:center; margin-top:28px; font-size:1.05rem; }
+.closing-text.stronger{ margin-top:36px; font-size:1.18rem; }  /* 글씨 키우고 더 내림 */
+
+/* 05: 커리어 탭 */
+.career-tabs{ padding:26px; }
+.career-tab-list{
+  display:flex; flex-wrap:wrap; gap:10px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px; margin-bottom:24px;
+}
+.career-tab{
+  flex:1 1 0; min-width:120px; padding:12px 16px; background:transparent; border:0; cursor:pointer;
+  color:#a8b0bc; font-weight:800; letter-spacing:-.01em;
+  border-bottom:3px solid transparent; transition: color .25s, border-color .25s;
+}
+.career-tab:hover{ color:#e9edf3; border-color:#c7ccd421; }
+.career-tab.active{ color:#e9edf3; border-color:#e9edf3; }
+.career-tab-panel{ animation: fadeIn .35s ease-out; }
+.hidden{ display:none !important; }
+@keyframes fadeIn{ from{ opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+.company-info{ margin-bottom:16px; }
+.company-name{ font-size:1.45rem; font-weight:900; color:#e9edf3; margin:0 0 6px; }
+.period{ font-size:1rem; font-weight:600; color:#a5adba; margin-left:8px; }
+.role{ color:#cbd3df; font-size:1rem; margin:0; }
+
+.matrix-layout{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.matrix-section{
+  padding:18px; border-radius:12px;
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--glass-bd);
+}
+.matrix-section h4{
+  color:#e0e5ec; font-weight:800; margin:0 0 10px;
+  border-bottom:1px solid var(--line); padding-bottom:8px;
+}
+.section-list{ list-style:none; padding:0; margin:0; }
+.section-list li{ position:relative; padding-left:16px; margin-bottom:8px; color:#d7dde3; }
+.section-list li::before{ content:"▪"; position:absolute; left:0; color:#b9c0c8; }
+
+/* 06: 태그 */
+.tags{ display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 24px; }
+.tag-item{
+  background:#151922; color:#e6ebf2; padding:8px 16px; border-radius:999px; font-weight:800;
+  border:1px solid rgba(255,255,255,.10);
+}
+
+/* Footer */
+.site-footer{ padding:50px 0; text-align:center; border-top:1px solid var(--line); color:#a0a7b2; }
+.site-footer a{ color:#cfd6de; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
+.foot-links{ margin-top:8px; font-size:.95rem; }
+
+/* In-view */
+.pre-inview{ opacity:0; transform: translateY(12px); }
+.in-view{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+
+/* 접근성: 모션 선호도 */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition: none !important; }
+}
+
+/* 반응형 */
+@media (max-width:1024px){
+  .process{ grid-template-columns:1fr; }
+  .arrow-line{ display:none; }
+}
+@media (max-width:768px){
+  .sec{ padding:72px 0; }
+  .sec-title{ font-size:2.1rem; }
+  .triple-grid{ grid-template-columns:1fr; gap:18px; }
+  .split-2{ grid-template-columns:1fr; gap:18px; }
+  .matrix-layout{ grid-template-columns:1fr; }
+  .about-title{ font-size:2.6rem; }
+  .about-subtitle{ font-size:1.05rem; }
+}
+
+/* ── Top scroll progress bar ───────────────── */
+:root{
+  /* Dark mono + purple 톤 */
+  --progress-grad: linear-gradient(135deg, rgba(160,130,255,.95) 0%, rgba(111,76,255,1) 100%);
+}
+/* 질문에서 준 원본 그라데이션(파랑→보라)을 쓰려면 ↓ 이 줄을 위 줄로 교체
+:root{ --progress-grad: linear-gradient(135deg, rgb(102,126,234) 0%, rgb(118,75,162) 100%); }
+*/
+
+.scroll-progress{
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;                    /* JS가 갱신 */
+  background: var(--progress-grad);
+  z-index: 9999;
+  transition: width .1s linear, opacity .3s ease;
+}
+
+/* 모션 최소화 선호 시 */
+@media (prefers-reduced-motion: reduce){
+  .scroll-progress{ transition: none; }
+}

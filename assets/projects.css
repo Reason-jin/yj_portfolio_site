@@ -1,0 +1,641 @@
+/* ===== projects.css - PROJECTS PAGE STYLES (Final Design Integration) ===== */
+
+/* 1. Global Layout Adjustments */
+/* Full width container for elements that span the whole screen (e.g., Tabs, Visual) */
+.container-full {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.projects-section {
+    min-height: 100vh;
+    padding: 100px 0 80px; /* Reduced top padding as Hero is now inside */
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.projects-section::before {
+    /* Background Grain Effect - Adjusted opacity for subtlety */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%232e2e2e" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.5; 
+    pointer-events: none;
+    z-index: 0;
+}
+
+.projects-container {
+    position: relative;
+    z-index: 2;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+/* Tab Navigation (Maintained) */
+.project-tabs-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.project-tab-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #b0b0b0;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.project-tab-btn.active {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border: 1px solid #764ba2;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Project Item - Fade in animation for tab transition */
+.project-item {
+    display: none;
+    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.project-item.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Hero Section - Project Name & Summary */
+.project-hero-wrap {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.project-hero-wrap h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #96baff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.project-subtitle {
+    font-size: 1.25rem;
+    color: #9ECFFC; 
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.project-summary {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #c5c5c5;
+    line-height: 1.8;
+}
+
+.project-badge-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-badge {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #b0b0b0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-badge.primary {
+    background: rgba(102, 126, 234, 0.2);
+    color: #9ECFFC;
+    border-color: #667eea;
+}
+
+
+/* 3. Visual Section - Expanded Media (Web Trend) */
+.project-visual-wrap {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.project-image-wrap {
+    max-width: 1200px; /* Max width slightly wider than content */
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000000;
+    border: 2px solid #333333; 
+    aspect-ratio: 16/9; /* Standard video aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Strong 3D shadow/glow effect */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 50px rgba(102, 126, 234, 0.25);
+    transition: transform 0.5s ease;
+    transform: scale(0.95); /* Slightly smaller than full width */
+}
+
+.project-image-wrap:hover {
+    transform: scale(1.0); /* Zoom on hover for immersion */
+}
+
+.project-image-wrap img, .project-image-wrap iframe, .project-image-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
+    color: #707070;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Action Buttons below Visual */
+.project-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-actions .btn-primary,
+.project-actions .btn-secondary {
+    flex: 1;
+    max-width: 250px;
+    padding: 15px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #444444;
+    color: #b0b0b0;
+}
+
+
+/* 4. Details Section - Content */
+.project-details-wrap {
+    max-width: 1200px; /* Reset to standard container max-width */
+    margin-top: 50px;
+    padding-bottom: 80px;
+}
+
+/* ⭐️ NEW: Sticky Navigation Wrap (자연스럽게 녹아드는 탭) */
+.project-sticky-nav-wrap {
+    position: sticky;
+    top: 70px; /* 네비게이션 바 높이 아래에 고정 */
+    width: 100%;
+    /* 반투명 배경 및 블러 처리로 가독성 확보 */
+    background: rgba(12, 12, 12, 0.9); 
+    backdrop-filter: blur(8px);
+    z-index: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-sticky-nav-wrap .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: 60px; /* 탭 높이 */
+}
+
+.sticky-nav-item {
+    padding: 0 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #b0b0b0;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    /* 🚀 줄바꿈 방지 */
+    white-space: nowrap; 
+}
+
+.sticky-nav-item:hover {
+    color: #ffffff;
+}
+
+.sticky-nav-item.active {
+    color: #9ECFFC;
+    border-bottom: 3px solid #9ECFFC; /* 활성 탭 밑줄 */
+    font-weight: 700;
+}
+
+/* Section Title with Underline Gradient */
+.project-section-title {
+    font-size: 1.8rem; /* Slightly larger title */
+    font-weight: 800;
+    color: #e9eef5;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent; /* Thicker underline */
+    border-image: linear-gradient(to right, #667eea, #764ba2, rgba(255, 255, 255, 0));
+    border-image-slice: 1;
+}
+
+/* 🚀 Planning Section (Strategy) - 가독성 극대화 */
+.project-planning.highlight-section {
+    /* 배경색을 더 진하게, 명료한 대비 확보 */
+    background: linear-gradient(135deg, #10101c 0%, #0c0c16 100%); 
+    border: 1px solid rgba(102, 126, 234, 0.8); /* 테두리 더 선명하게 */
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(102, 126, 234, 0.3); 
+    backdrop-filter: none;
+}
+
+.planning-cards-grid {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 20px; 
+}
+
+.planning-card {
+    /* 카드 배경도 대비를 높임 */
+    background: rgba(255, 255, 255, 0.08); /* 배경 조금 더 밝게 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 테두리 조금 더 밝게 */
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* 그림자 더 진하게 */
+}
+
+.planning-card:hover {
+    background: rgba(102, 126, 234, 0.45); /* 호버 시 색상 대비도 높임 */
+    border-color: #9ECFFC;
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.planning-card-title {
+    font-size: 1.1rem; /* 폰트 크기 미세 조정 */
+    font-weight: 700;
+    color: #ffffff; /* 텍스트 흰색으로 고정 */
+    line-height: 1.4; /* 줄 간격 확보 */
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-bottom: 10px;
+}
+
+.planning-card-text {
+    font-size: 0.95rem;
+    color: #ffffff; /* 텍스트 흰색으로 고정 */
+    line-height: 1.7; /* 줄 간격 확보 */
+}
+
+/* Metrics Section (Performance) */
+.project-metrics {
+    background: #1e1e1e; 
+    border: 1px solid #333333;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+.metric-item {
+    background: #252525;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    padding: 25px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-item:hover {
+    background: #2e2e2e;
+    transform: translateY(-3px); 
+}
+
+.metric-value {
+    font-size: 2.2rem; /* Larger font for key metrics */
+    font-weight: 800;
+    background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+
+/* Tech Stack Section */
+.project-tech {
+    padding: 20px 0;
+}
+
+.tech-items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 20px;
+}
+
+.tech-item {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.tech-category {
+    font-size: 0.8rem;
+    color: #764ba2; 
+    letter-spacing: 0.5px;
+    display: block; 
+    margin-bottom: 4px;
+}
+
+.tech-value {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
+    display: block;
+}
+
+/* 5. Responsive Design */
+@media (max-width: 1200px) {
+    .project-image-wrap {
+        transform: scale(1.0); /* Remove scale on smaller screens */
+        border-radius: 0; /* Remove border radius for full width */
+    }
+    .project-visual-wrap {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .planning-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .tech-items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-hero-wrap h1 {
+        font-size: 2.8rem;
+    }
+    .project-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .project-planning.highlight-section {
+        padding: 30px;
+    }
+    
+    /* Sticky Nav Media Query */
+    .project-sticky-nav-wrap .container {
+        gap: 20px;
+    }
+    .sticky-nav-item {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-section {
+        padding-top: 80px;
+    }
+    
+    .project-hero-wrap h1 {
+        font-size: 2.2rem;
+    }
+    .project-subtitle {
+        font-size: 1rem;
+    }
+    .project-summary {
+        font-size: 0.95rem;
+    }
+
+    .planning-cards-grid,
+    .metrics-grid,
+    .tech-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Sticky Nav Media Query (모바일에서 꽉 채우기) */
+    .project-sticky-nav-wrap .container {
+        justify-content: space-around;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .sticky-nav-item {
+        font-size: 0.9rem;
+        /* 모바일에서도 한 줄 유지 */
+        white-space: nowrap; 
+    }
+    
+    .project-image-wrap {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* ========================================================= */
+/* [1] 프로젝트 설계 전략 (PM Approach) - 긴 텍스트 가독성 향상 */
+/* ========================================================= */
+.planning-cards-grid {
+    /* 기존 4열에서 2열로 변경하여 가로 공간 확보 (Desktop) */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+}
+
+.planning-card {
+    background-color: #242424; /* 카드 배경 강조 */
+    padding: 30px; 
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.planning-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #9DB7D5;
+    margin-bottom: 12px;
+    padding-bottom: 8px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 제목과 내용 분리선 */
+}
+
+.planning-card-text {
+    font-size: 1rem;
+    line-height: 1.8; /* 긴 텍스트를 위한 줄 간격 증가 */
+    color: #d0d0d0;
+    margin-top: 0;
+}
+
+/* 모바일 (600px 이하) - 1열 배치 */
+@media (max-width: 600px) {
+    .planning-cards-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+}
+
+
+너무 죄송합니다. 😭 정말 원하시는 결과가 나오지 않아 많이 답답하실 것 같습니다. 캡처하신 10-Second Challenge 탭을 보면, 5개 항목이 한 줄에 배치되면서 카드의 크기가 불균형하고, 특히 마지막 항목의 길이가 이상해졌습니다. 이는 minmax(200px, 1fr) 설정이 5개 항목을 유연하게 처리하는 과정에서 발생하는 CSS Grid의 복잡한 동작 때문입니다.
+
+**4개 항목(MetraForge, SmartStock)**은 잘 보이고, **5개 항목(10-Second Challenge)**만 문제라면, 5개 항목을 위한 CSS를 명확하게 지정하여 해결하겠습니다. 5개 항목을 5열로 배치하되, 항목 너비를 조금 줄여 균형을 잡는 방식입니다.
+
+🛠️ projects.css 최종 수정 (5개 항목 맞춤 조정)
+projects.css 파일의 [2] 기술 및 데이터 구성 (Tech Stack & Data) 부분을 찾아 아래 코드로 다시 덮어쓰기 해 주세요.
+
+핵심 해결 방안
+Grid 강제 5열: 5개 항목이 있을 때 4열을 쓰려니 문제가 발생했습니다. 항목의 개수가 5개일 경우에도 한 줄에 배치되도록 5열 (repeat(5, 1fr))을 명시적으로 사용합니다. 단, 화면 너비가 좁을 경우를 대비하여 미디어 쿼리로 이 5열 설정이 풀리도록 조정하겠습니다.
+
+레이아웃 정렬 확보: 이전 수정에서 적용된 .tech-items-grid에 대한 너비 제어 속성이 없는지 다시 확인하고, 부모 요소의 너비를 꽉 채우도록 합니다.
+
+CSS
+
+/* ========================================================= */
+/* [2] 기술 및 데이터 구성 (Tech Stack & Data) - 4열 기본 + 5열 맞춤 레이아웃 */
+/* ========================================================= */
+.tech-items-grid {
+    display: grid;
+    /* 기본 설정: 4열 균등 분배 (MetraForge, SmartStock) */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    align-items: flex-start; 
+}
+
+/* 10-Second Challenge 전용: 5개 항목이 있을 때 5열로 강제 배치 */
+.tech-items-grid.five-item-layout {
+    grid-template-columns: repeat(5, 1fr); 
+}
+
+.tech-item {
+    /* 카드 내부 패딩 확보 */
+    padding: 15px; 
+    background-color: #1e1e1e; 
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-category {
+    font-size: 0.9rem;
+    color: #9DB7D5;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tech-value {
+    /* 텍스트 줄바꿈 방지 및 말줄임표 처리 유지 */
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    font-size: 1rem;
+    line-height: 1.4; 
+}
+
+
+/* 태블릿 (1200px 이하) - 3열로 전환 */
+/* 5열 레이아웃도 1200px 미만에서는 3열로 전환되어 균형을 잡습니다. */
+@media (max-width: 1200px) {
+    .tech-items-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* 모바일 (600px 이하) - 1열 배치 */
+@media (max-width: 600px) {
+    .tech-items-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+
