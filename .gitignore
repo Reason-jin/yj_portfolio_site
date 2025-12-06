@@ -32,3 +32,12 @@ dist/
 build/
 *.min.js
 *.min.css
+
+.vercel
+
+# Large files (hosted elsewhere)
+docs/10sec_resize.mp4
+
+# Downloaded binaries
+gh_cli.zip
+bin/

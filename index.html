@@ -169,9 +169,26 @@
     <div class="slider-wrap">
       <div class="slider" aria-label="project slider">
         <div class="slider-track">
+          <!-- 아이토리 -->
+          <div class="project-card slide">
+            <div class="project-image">
+              <img src="docs/아이토리.png" alt="아이토리 (iTory)">
+            </div>
+            <div class="project-content">
+              <div class="project-title">아이토리 (iTory) — AI 전래동화 플랫폼</div>
+              <div class="project-description">5~11세 아동 대상, 5가지 스타일 영상 생성, 5막 구조 스토리텔링</div>
+              <div class="project-tech">
+                <span class="tech-tag">GPT-4o-mini</span><span class="tech-tag">DALL-E 3</span><span class="tech-tag">React</span>
+              </div>
+              <a class="btn btn-primary btn-full" href="projects.html#aitory">자세히</a>
+            </div>
+          </div>
+
           <!-- MetraForge -->
           <div class="project-card slide">
-            <div class="project-image"><div class="project-placeholder">MF</div></div>
+            <div class="project-image">
+              <img src="docs/metraforge.png" alt="MetraForge AI">
+            </div>
             <div class="project-content">
               <div class="project-title">MetraForge AI — 지능형 금속가공 품질</div>
               <div class="project-description">TCN+Tabular 하이브리드, PR-AUC 0.9667 / ROC-AUC 0.9983</div>
@@ -184,7 +201,9 @@
 
           <!-- SmartStock -->
           <div class="project-card slide">
-            <div class="project-image"><div class="project-placeholder">SS</div></div>
+            <div class="project-image">
+              <img src="docs/smartstock_AI Workflow.png" alt="SmartStock AI">
+            </div>
             <div class="project-content">
               <div class="project-title">SmartStock AI — 수요·재고 정책</div>
               <div class="project-description">LSTM+CNN 예측, EOQ/ROP/SS, KPI WAPE≤15% FillRate≥95%</div>
@@ -197,25 +216,16 @@
 
           <!-- 10-Second -->
           <div class="project-card slide">
-            <div class="project-image"><div class="project-placeholder">10s</div></div>
-            <div class="project-content">
-              <div class="project-title">10-Second Challenge — 초경량 프로토타입</div>
-              <div class="project-description">포즈 인식·자동촬영·정확도 피드백, 1~4인 동시</div>
-              <div class="project-tech">
-                <span class="tech-tag">YOLOv8</span><span class="tech-tag">MediaPipe</span>
-              </div>
-              <a class="btn btn-primary btn-full" href="projects.html#tensec">자세히</a>
+            <div class="project-image">
+              <img src="docs/10sec.png" alt="10-Second Challenge">
             </div>
-          </div>
-
-          <!-- Blank (공란 유지) -->
-          <div class="project-card slide">
-            <div class="project-image"><div class="project-placeholder">+</div></div>
             <div class="project-content">
-              <div class="project-title">Coming Soon</div>
-              <div class="project-description">프로젝트가 추가될 예정입니다.</div>
-              <div class="project-tech"></div>
-              <a class="btn btn-primary btn-full" href="projects.html">전체 보기</a>
+              <div class="project-title">10-Second Challenge — 포즈 챌린지 촬영</div>
+              <div class="project-description">AI 포즈 인식 → 정확도 측정 → 자동촬영 → 사진+영상 제공</div>
+              <div class="project-tech">
+                <span class="tech-tag">YOLOv8</span><span class="tech-tag">MediaPipe</span><span class="tech-tag">FastAPI</span>
+              </div>
+              <a class="btn btn-primary btn-full" href="projects.html#tensecond">자세히</a>
             </div>
           </div>
         </div>
@@ -255,11 +265,14 @@
   </div>
   <div class="nano-body"></div>
   <div class="nano-input">
-    <input placeholder="메시지를 입력하세요 (데모)" />
+    <button class="nano-voice-btn" onclick="window.nanoYJUI?.toggleVoiceInput()" title="음성 입력">🎤</button>
+    <input placeholder="메시지를 입력하세요" />
     <button class="nano-send">보내기</button>
   </div>
 </div>
 
+<script src="assets/chatbot-scenarios.js"></script>
+<script src="assets/chatbot-ui.js"></script>
 <script src="assets/script.js"></script>
 </body>
 </html>

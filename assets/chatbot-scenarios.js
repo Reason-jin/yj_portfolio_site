@@ -17,6 +17,23 @@ class NanoYJScenario {
 
   // 프로젝트 매핑
   projectsDB = {
+    aitory: {
+      name: '아이토리 (iTory)',
+      badge: '현재 진행중',
+      subtitle: 'AI 기반 인터랙티브 전래동화 영상 생성 플랫폼',
+      domain: '플랫폼·SaaS',
+      highlights: [
+        '5가지 시각 스타일 (실사/2D애니/3D카툰/픽사/수채화)',
+        '5막 구조 스토리텔링 (발단/전개/위기/절정/결말)',
+        'GPT-4o-mini + DALL-E 3 + Seedance 2.0',
+        'Firebase Gen2 서버리스 아키텍처'
+      ],
+      resources: [
+        { type: 'link', title: '시스템 아키텍처', url: 'https://drive.google.com/file/d/1JNPF4smRGib5erz0Xg5EJ0JRZ7LIQyfA/view?usp=drive_link' },
+        { type: 'link', title: '기술스택정의서', url: 'https://docs.google.com/spreadsheets/d/1FumutktX6VZcnG2TZGOnX7ONDWDyPiPC2VMnMi0Tbrc/edit?gid=0#gid=0' },
+        { type: 'link', title: 'WBS&마일스톤', url: 'https://docs.google.com/spreadsheets/d/1PDs3U1VkHI-x2EYcZHWP-8IPLkDX18dzrWuwcEHjCtA/edit?gid=1845099267#gid=1845099267' }
+      ]
+    },
     metraforge: {
       name: 'MetraForge AI',
       badge: 'K-AI 경진대회 출품',
@@ -50,17 +67,17 @@ class NanoYJScenario {
     },
     tensecond: {
       name: '10-Second Challenge',
-      badge: '게이미피케이션 포즈 인식',
-      subtitle: '10초 내 AI 반응을 목표로 한 초경량 인터랙티브 프로토타입',
+      badge: '엔터테인먼트 촬영 프로토타입',
+      subtitle: 'AI 기반 포즈 챌린지 촬영 서비스',
       domain: '실험적 프로토타입',
       highlights: [
-        'YOLOv8 실시간 포즈 인식',
-        '정확도 95% / 반응시간 ≤10초',
-        '2,500회 데모 / 만족도 4.5/5'
+        'YOLOv8 Pose + MediaPipe 하이브리드',
+        '99% 스켈레톤 인식 / 1~4인 동시 지원',
+        '사진+영상 결과물 / 게임화 UX'
       ],
       resources: [
         { type: 'pdf', title: '발표자료 다운로드', url: './docs/10sec_presentation.pdf' },
-        { type: 'video', title: '데모 영상 다운로드', url: './docs/10sec_resize.mp4' },
+        { type: 'video', title: '데모 영상 보기', url: 'https://drive.google.com/file/d/1L0qhppeYbzSdg99d1-th5aWeSIW-xS54/preview' },
         { type: 'pdf', title: 'R&R & WBS', url: './docs/10sec_WBS_R&R.pdf' }
       ]
     }
@@ -74,7 +91,7 @@ class NanoYJScenario {
 
 이투온에서 정부·지자체 AI·데이터 사업 제안서를 총괄 기획하며 <b>제안서 템플릿 표준화로 작성 시간 20% 단축</b>, <b>리서치 DB 구축으로 재사용률 40% 증대</b> 등의 성과를 냈습니다.<br/><br/>
 
-또한 MBC 아카데미 AI+X 융복합 과정에서 <b>MetraForge AI</b>(K-AI 경진대회 출품, PR-AUC 0.9667), <b>SmartStock AI</b>(LSTM+CNN 수요예측 WAPE 14.2%) 등의 학습 프로젝트를 PM 역할로 리드하며 기획부터 모델 검증까지 전 과정을 경험했습니다.<br/><br/>
+또한 MBC 아카데미 AI+X 융복합 과정에서 학습을 통해 <b>MetraForge AI</b>(K-AI 경진대회 출품, PR-AUC 0.9667), <b>SmartStock AI</b>(LSTM+CNN 수요예측 WAPE 14.2%) 등의 포트폴리오 프로젝트를 PM 역할로 진행하며 기획부터 모델 검증까지 전 과정을 경험했습니다.<br/><br/>
 
 작게 실험하고 빠르게 배우며, 데이터로 검증하는 방식으로 성과를 만드는 PM이 되겠습니다.`,
       sources: [
@@ -114,7 +131,7 @@ class NanoYJScenario {
 • <b>80/20 법칙 적용</b>: 핵심 20%에 집중해 80% 성과 달성<br/>
 • <b>데드라인 우선</b>: "완벽한 계획"보다 "실행 가능한 계획" 우선<br/><br/>
 
-SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기보다, WAPE 15% 목표를 달성한 모델로 먼저 프로토타입을 구축하고, 팀 피드백을 통해 정확도를 14.2%까지 개선했습니다.<br/><br/>
+MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기보다, WAPE 15% 목표를 달성한 모델로 먼저 프로토타입을 구축하고, 팀 피드백을 통해 정확도를 14.2%까지 개선했습니다. 또한 10-Second Challenge 학습 프로젝트에서는 2주 만에 하이브리드 포즈 인식 프로토타입을 구축하여 빠른 검증을 우선시했습니다.<br/><br/>
 
 현재는 "완벽보다 실행, 실행하며 개선"을 원칙으로 일하고 있습니다.`
     },
@@ -126,7 +143,7 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
 귀사는 A/B 테스트와 데이터 분석을 통해 제품을 개선한다고 들었습니다. 저 역시 학습 프로젝트에서 데이터 분석을 통해 모델 성능을 개선한 경험이 있어, 귀사의 문화와 잘 맞을 것 같습니다.<br/><br/>
 
 <b>2. 실험적 시도를 장려하는 환경</b><br/>
-귀사의 "Fail Fast, Learn Faster" 철학은 제가 추구하는 "작게 실험하고 빠르게 배우는" 방식과 일치합니다. 학습 과정에서 10-Second Challenge 프로토타입을 2주 만에 구축하며 빠른 실행의 가치를 경험했습니다.<br/><br/>
+귀사의 "Fail Fast, Learn Faster" 철학은 제가 추구하는 "작게 실험하고 빠르게 배우는" 방식과 일치합니다. MBC 아카데미 학습 과정에서 10-Second Challenge 프로토타입을 2주 만에 구축하며 빠른 실행의 가치를 경험했습니다.<br/><br/>
 
 <b>3. 성장 기회</b><br/>
 귀사의 [구체적인 제품/서비스]는 제가 관심 있는 [도메인] 분야이며, [팀/프로젝트]에서 기획 역량을 더욱 성장시킬 수 있을 것으로 기대합니다.<br/><br/>
@@ -135,13 +152,15 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
     },
     project_experience: {
       question: '가장 기억에 남는 프로젝트는 무엇인가요?',
-      answer: `가장 기억에 남는 프로젝트는 <b>SmartStock AI</b>입니다.<br/><br/>
+      answer: `실무에서는 <b>이투온에서의 제안서 표준화 프로젝트</b>가 가장 기억에 남습니다. 50건의 제안서를 분석하여 템플릿을 설계하고, 작성 시간 20% 단축이라는 성과를 냈습니다.<br/><br/>
 
-<b>【배경】</b> MBC 아카데미 AI+X 융복합 과정에서 중소 제조·유통사의 재고관리 문제를 해결하는 학습 프로젝트를 진행했습니다.<br/><br/>
+또한 MBC 아카데미 AI+X 융복합 과정에서 학습을 통해 진행한 <b>SmartStock AI</b>도 인상 깊었습니다.<br/><br/>
+
+<b>【배경】</b> 교육 과정에서 중소 제조·유통사의 재고관리 문제를 해결하는 포트폴리오 프로젝트를 진행했습니다.<br/><br/>
 
 <b>【목표】</b> CSV 업로드만으로 AI 수요예측과 최적 재고정책을 제안하는 시스템을 개발하는 것이었습니다.<br/><br/>
 
-<b>【PM 역할로서 실행】</b><br/>
+<b>【PM 역할로 학습한 내용】</b><br/>
 1. <b>문제 정의</b>: 중소기업의 Pain Point 조사 → "데이터 정제"가 핵심 과제임을 파악<br/>
 2. <b>기획</b>: 자동 데이터 정제 + LSTM+CNN 예측 + EOQ/ROP/SS 정책 계산을 하나의 플로우로 설계<br/>
 3. <b>프로토타입 구축</b>: 3주 만에 핵심 기능 완성<br/>
@@ -153,7 +172,7 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
 • AI 모델 선정 시 정확도와 실행 속도의 트레이드오프<br/>
 • 사용자 관점의 UI/UX 설계 경험<br/><br/>
 
-이 프로젝트를 통해 <b>문제 정의 → 기획 → 개발 → 검증</b>의 전체 사이클을 PM 역할로 경험하며 실무 감각을 익혔습니다.`,
+이 학습 프로젝트를 통해 <b>문제 정의 → 기획 → 개발 → 검증</b>의 전체 사이클을 PM 역할로 경험하며 실무에 적용할 역량을 키웠습니다.`,
       sources: [
         { type: 'project', title: 'SmartStock AI 최종 보고서', link: './docs/smartstock_final_report.pdf' },
         { type: 'project', title: 'SmartStock AI 기획서', link: './docs/smartstock_planning.pdf' },
@@ -165,7 +184,7 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
     },
     conflict: {
       question: '팀원과 갈등이 있었던 경험과 해결 방법을 말씀해주세요.',
-      answer: `MetraForge AI 학습 프로젝트에서 팀원과 기획 방향으로 의견 차이가 있었습니다.<br/><br/>
+      answer: `MBC 아카데미에서 진행한 MetraForge AI 학습 프로젝트에서 팀원과 기획 방향으로 의견 차이가 있었습니다.<br/><br/>
 
 <b>【상황】</b> 팀원은 "모델 정확도 향상"에 집중했고, 저는 "실무 현장에서 사용 가능한 실용성"을 우선했습니다.<br/><br/>
 
@@ -298,6 +317,7 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
 
     return {
       type: 'interview_answer',
+      message: '',
       question: qa.question,
       answer: qa.answer,
       sources: qa.sources || [],
@@ -481,7 +501,9 @@ SmartStock AI 학습 프로젝트에서 완벽한 예측 모델을 기다리기�
 
   // 대화 히스토리 추가
   addMessage(role, content) {
-    this.conversationHistory.push({ role, content, timestamp: new Date() });
+    // OpenAI API는 'assistant' role을 사용 (bot -> assistant 변환)
+    const apiRole = role === 'bot' ? 'assistant' : role;
+    this.conversationHistory.push({ role: apiRole, content, timestamp: new Date() });
   }
 }
 

@@ -25,7 +25,8 @@
         <div class="container-full"> 
             
             <div class="project-tabs-wrap">
-                <button class="project-tab-btn active" data-project="metraforge">MetraForge AI</button>
+                <button class="project-tab-btn active" data-project="aitory">아이토리 (iTory)</button>
+                <button class="project-tab-btn" data-project="metraforge">MetraForge AI</button>
                 <button class="project-tab-btn" data-project="smartstock">SmartStock AI</button>
                 <button class="project-tab-btn" data-project="tensecond">10-Second Challenge</button>
             </div>
@@ -33,7 +34,7 @@
 
         <div class="projects-container">
 
-            <div class="project-item active" data-project="metraforge">
+            <div class="project-item" data-project="metraforge">
                 
                 <div class="project-hero-wrap container">
                     <div class="project-badge-group">
@@ -144,7 +145,7 @@
                 <div class="project-hero-wrap container">
                     <div class="project-badge-group">
                         <span class="project-badge primary">B2B 수요예측 솔루션</span>
-                        <span class="project-badge">2024</span>
+                        <span class="project-badge">2025</span>
                         <span class="project-badge">AIX 프로젝트</span>
                     </div>
                     <h1>SmartStock AI</h1>
@@ -197,8 +198,8 @@
                     
                     <div class="section-divider"></div>
 
-                    <div class="project-metrics" id="metrics-smartstock"> 
-                        <h3 class="project-section-title">주요 성과 지표 (Business Metrics)</h3>
+                    <div class="project-metrics" id="metrics-smartstock">
+                        <h3 class="project-section-title">모델 검증 결과 (Model Validation)</h3>
                         <div class="metrics-grid">
                             <div class="metric-item">
                                 <div class="metric-value">14.2%</div>
@@ -209,12 +210,12 @@
                                 <div class="metric-label">Fill Rate (충족률)</div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-value">20%</div>
-                                <div class="metric-label">과잉 재고 감소</div>
+                                <div class="metric-value">3주</div>
+                                <div class="metric-label">MVP 프로토타입 구축</div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-value">70%</div>
-                                <div class="metric-label">업무 시간 절감</div>
+                                <div class="metric-value">End-to-End</div>
+                                <div class="metric-label">데이터 정제~정책 계산 자동화</div>
                             </div>
                         </div>
                     </div>
@@ -250,24 +251,21 @@
                 <div class="project-hero-wrap container">
                     <div class="project-badge-group">
                         <span class="project-badge primary">게이미피케이션 포즈 인식</span>
-                        <span class="project-badge">2024</span>
+                        <span class="project-badge">2025</span>
                         <span class="project-badge">Rapid Prototype</span>
                     </div>
                     <h1>10-Second Challenge</h1>
-                    <p class="project-subtitle">10초 내 AI 반응을 목표로 한 초경량 인터랙티브 프로토타입</p>
-                    <p class="project-summary">10초 이내 실시간 포즈 인식을 목표로 한 초경량 프로토타입입니다. YOLOv8 기반의 실시간 인식과 게이미피케이션 UX를 결합하여 사용자 참여를 극대화하는 인터랙티브 체험을 제공합니다. (R&R: 기획팀, 디자인팀)</p>
+                    <p class="project-subtitle">AI 기반 포즈 챌린지 촬영 서비스</p>
+                    <p class="project-summary">포즈 정확도 인식과 자동 촬영으로 게임처럼 즐기는 체험을 제공합니다. YOLOv8 Pose + MediaPipe 기반 실시간 포즈 인식으로 정확도 피드백을 제공하고, 촬영 결과물(사진+영상)을 생성하는 엔터테인먼트 중심 촬영 서비스입니다.</p>
                 </div>
                 
                 <div class="project-visual-wrap">
                     <div class="project-image-wrap">
-                        <video controls width="100%" height="100%">
-                            <source src="./docs/10sec_resize.mp4" type="video/mp4">
-                            브라우저가 비디오 태그를 지원하지 않습니다.
-                        </video>
+                        <iframe src="https://drive.google.com/file/d/1L0qhppeYbzSdg99d1-th5aWeSIW-xS54/preview" width="100%" height="600" allow="autoplay" frameborder="0"></iframe>
                     </div>
                     <div class="project-actions container">
                         <a href="./docs/10sec_presentation.pdf" class="btn btn-primary">발표 자료</a>
-                        <a href="./docs/10sec_resize.mp4" class="btn btn-secondary" download>데모 영상 받기</a>
+                        <a href="https://drive.google.com/file/d/1L0qhppeYbzSdg99d1-th5aWeSIW-xS54/view?usp=sharing" class="btn btn-secondary" target="_blank">데모 영상 받기</a>
                         <a href="./docs/10sec_WBS_R&R.pdf" class="btn btn-secondary" download>R&R & WBS</a>
                     </div>
                 </div>
@@ -282,48 +280,48 @@
 
                 <div class="project-details-wrap container">
                     
-                    <div class="project-planning highlight-section" id="strategy-tensecond"> 
-                        <h3 class="project-section-title">프로젝트 설계 전략 (Prototype Approach)</h3>
+                    <div class="project-planning highlight-section" id="strategy-tensecond">
+                        <h3 class="project-section-title">프로젝트 설계 전략 (Service Design)</h3>
                         <div class="planning-cards-grid">
                             <div class="planning-card">
-                                <div class="planning-card-title">10초 반응 속도 목표</div>
-                                <p class="planning-card-text">AI 인식부터 결과 도출까지 10초 이내 완료를 목표로 삼아 체험 만족도를 극대화하도록 설계</p>
+                                <div class="planning-card-title">포즈 챌린지 + 자동 촬영</div>
+                                <p class="planning-card-text">포즈 정확도를 실시간으로 측정하고, 정확도 기준 충족 시 자동 촬영하여 게임화된 체험 제공</p>
                             </div>
                             <div class="planning-card">
-                                <div class="planning-card-title">데이터 경량화 및 최적화</div>
-                                <p class="planning-card-text">프로토타입 환경에 맞춰 추론 속도와 정확도를 모두 확보할 수 있는 YOLOv8 모델 경량화 전략 적용</p>
+                                <div class="planning-card-title">하이브리드 포즈 인식</div>
+                                <p class="planning-card-text">MediaPipe(실시간/저사양) + YOLOv8 Pose(정밀/다인)로 웹캠 환경에서 99% 인식률 달성</p>
                             </div>
                             <div class="planning-card">
-                                <div class="planning-card-title">참여자 확장성 고려</div>
-                                <p class="planning-card-text">웹캠 기반 인터랙션 및 리더보드 시스템을 구현하여, 현장 이벤트 등 다양한 마케팅 활용 가능성 확보</p>
+                                <div class="planning-card-title">결과물 생성 및 공유</div>
+                                <p class="planning-card-text">사진+영상 결과물 제공, SNS 공유 최적화로 MZ세대 바이럴 마케팅 효과 창출</p>
                             </div>
                             <div class="planning-card">
-                                <div class="planning-card-title">직관적인 UX/UI</div>
-                                <p class="planning-card-text">챌린지 형식의 게이미피케이션 요소를 결합하여 사용자 접근성과 재미 요소를 강화</p>
+                                <div class="planning-card-title">엔터테인먼트 UX 설계</div>
+                                <p class="planning-card-text">게임/챌린지 형식으로 체험 공간·행사·프로모션 부스 등 다양한 적용 가능</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="section-divider"></div>
 
-                    <div class="project-metrics" id="metrics-tensecond"> 
-                        <h3 class="project-section-title">주요 성과 지표 (Performance & UX)</h3>
+                    <div class="project-metrics" id="metrics-tensecond">
+                        <h3 class="project-section-title">주요 기능 지표 (Service Capability)</h3>
                         <div class="metrics-grid">
                             <div class="metric-item">
-                                <div class="metric-value">95%</div>
-                                <div class="metric-label">포즈 인식 정확도</div>
+                                <div class="metric-value">99%</div>
+                                <div class="metric-label">포즈 인식 정확도 (스켈레톤)</div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-value">≤10초</div>
-                                <div class="metric-label">AI 최종 반응 시간</div>
+                                <div class="metric-value">1~4인</div>
+                                <div class="metric-label">동시 인식 지원</div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-value">2,500회</div>
-                                <div class="metric-label">데모 세션 진행</div>
+                                <div class="metric-value">5가지</div>
+                                <div class="metric-label">컨셉별 포즈 세트</div>
                             </div>
                             <div class="metric-item">
-                                <div class="metric-value">4.5/5</div>
-                                <div class="metric-label">사용자 만족도</div>
+                                <div class="metric-value">사진+영상</div>
+                                <div class="metric-label">촬영 결과물 제공</div>
                             </div>
                         </div>
                     </div>
@@ -353,6 +351,116 @@
                             <div class="tech-item">
                                 <span class="tech-category">데이터</span>
                                 <span class="tech-value">웹캠 스트리밍 데이터</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item active" data-project="aitory">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">현재 진행중</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">AI 전래동화 플랫폼</span>
+                    </div>
+                    <h1>아이토리 (iTory)</h1>
+                    <p class="project-subtitle">AI 기반 인터랙티브 전래동화 영상 생성 플랫폼</p>
+                    <p class="project-summary">5~11세 아동을 위한 맞춤형 전래동화 영상 생성 플랫폼입니다. 5가지 시각 스타일(실사/2D애니/3D카툰/픽사/수채화)로 동일 이야기를 재생성하며, 5막 구조(발단/전개/위기/절정/결말)로 완성된 2분 30초 영상을 제공합니다.</p>
+                </div>
+
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <object data="./docs/시스템 구성도.pdf" type="application/pdf" width="100%" height="600px">
+                            <p>시스템 구성도를 보려면 <a href="./docs/시스템 구성도.pdf" target="_blank">여기를 클릭</a>하세요.</p>
+                        </object>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="https://drive.google.com/file/d/1JNPF4smRGib5erz0Xg5EJ0JRZ7LIQyfA/view?usp=drive_link" class="btn btn-primary" target="_blank">시스템 아키텍처</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1FumutktX6VZcnG2TZGOnX7ONDWDyPiPC2VMnMi0Tbrc/edit?gid=0#gid=0" class="btn btn-secondary" target="_blank">기술스택정의서</a>
+                        <a href="https://www.canva.com/design/DAG46852gkw/t4RjPL6aqQBbNkuPqOoRPg/edit?utm_content=DAG46852gkw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-secondary" target="_blank">시스템 구성도</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1PDs3U1VkHI-x2EYcZHWP-8IPLkDX18dzrWuwcEHjCtA/edit?gid=1845099267#gid=1845099267" class="btn btn-secondary" target="_blank">WBS&마일스톤</a>
+                        <a href="https://drive.google.com/file/d/1Hj0dSbUtCj50sHuWh7Z3fQJ6hliz-wrF/view?usp=drive_link" class="btn btn-secondary" target="_blank">성장 시뮬레이션</a>
+                        <a href="https://docs.google.com/document/d/1juURTeXuczjiNC7a6kQbJ_fVNvJXZze2/edit?pli=1" class="btn btn-secondary" target="_blank">프로젝트 정의서</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-aitory" class="sticky-nav-item active" data-section="strategy-aitory">설계 전략</a>
+                        <a href="#metrics-aitory" class="sticky-nav-item" data-section="metrics-aitory">주요 성과</a>
+                        <a href="#tech-aitory" class="sticky-nav-item" data-section="tech-aitory">기술 구성</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+
+                    <div class="project-planning highlight-section" id="strategy-aitory">
+                        <h3 class="project-section-title">프로젝트 설계 전략 (PM Approach)</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">5-Style Generation System</div>
+                                <p class="planning-card-text">동일 스토리를 5가지 시각 스타일로 재생성하여 아동의 선호도 선택권을 보장하는 멀티 스타일 플랫폼 설계</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Firebase Gen2 기반 비용 효율화</div>
+                                <p class="planning-card-text">Cloud Functions Gen2로 트래픽 변동 대응, Firestore로 사용자 콘텐츠 실시간 동기화하는 서버리스 구조 설계</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">5막 구조 스토리텔링</div>
+                                <p class="planning-card-text">발단/전개/위기/절정/결말의 고전적 서사 구조를 AI 프롬프트에 반영하여 이야기 완성도 확보</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">순이익 구조 설계</div>
+                                <p class="planning-card-text">Premium 19,000원 기반 3-tier 수익 구조로 Y3 흑자 전환(8.5%), AI 비용 최적화(35%→20%)로 Y5 영업이익률 46.8% 달성 목표</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-aitory">
+                        <h3 class="project-section-title">주요 성과 지표 (Platform Metrics)</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">2분 30초</div>
+                                <div class="metric-label">전체 영상 생성 시간</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">5가지</div>
+                                <div class="metric-label">시각 스타일 선택지</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">55%</div>
+                                <div class="metric-label">콘텐츠당 순이익률</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">5막</div>
+                                <div class="metric-label">스토리텔링 구조</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-aitory">
+                        <h3 class="project-section-title">기술 및 서비스 구성 (Tech Stack & AI)</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">프론트엔드</span>
+                                <span class="tech-value">React 18 · TypeScript · React Native</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">백엔드</span>
+                                <span class="tech-value">FastAPI · Firebase Gen2</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI 서비스</span>
+                                <span class="tech-value">GPT-4o-mini · DALL-E 3 · Seedance 2.0</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">인프라</span>
+                                <span class="tech-value">Firestore · Cloud Storage · ElevenLabs TTS</span>
                             </div>
                         </div>
                     </div>
@@ -392,8 +500,9 @@
       </div>
       <div class="nano-body"></div>
       <div class="nano-input">
-        <input placeholder="메시지를 입력하세요 (데모)" />
-        <button>보내기</button>
+        <button class="nano-voice-btn" onclick="window.nanoYJUI?.toggleVoiceInput()" title="음성 입력">🎤</button>
+        <input placeholder="메시지를 입력하세요" />
+        <button class="nano-send">보내기</button>
       </div>
     </div>
 

@@ -338,136 +338,8 @@ document.querySelectorAll('a, button, .skill-item, .project-card').forEach(el =>
     });
 });
 
-console.log('🚀 Portfolio loaded successfully!');
+console.log('Portfolio loaded successfully!');
 console.log('© 2025 Yujin Lee. All rights reserved.');
-
-
-// ---- Nano-YJ Assistant (UI-only demo) ----
-(function(){
-  const openBtn = document.querySelector('.nano-yj-launch');
-  const overlay = document.querySelector('.nano-overlay');
-  const modal = document.querySelector('.nano-modal');
-  const closeBtns = document.querySelectorAll('.nano-close');
-  const body = document.querySelector('.nano-body');
-  const input = document.querySelector('.nano-input input');
-  const send = document.querySelector('.nano-send');
-  function open(){ if(overlay) overlay.style.display='block'; if(modal) modal.style.display='block'; intro(); }
-  function close(){ if(overlay) overlay.style.display='none'; if(modal) modal.style.display='none'; if(body) body.innerHTML=''; }
-  if(openBtn){ openBtn.addEventListener('click', open); }
-  closeBtns.forEach(b=>b.addEventListener('click', close));
-  if(overlay){ overlay.addEventListener('click', close); }
-  function addMsg(text, who='bot'){
-    const wrap = document.createElement('div'); wrap.className = 'nano-msg ' + who;
-    const b = document.createElement('div'); b.className = 'bubble'; b.innerHTML = text;
-    wrap.appendChild(b); body.appendChild(wrap); body.scrollTop = body.scrollHeight;
-  }
-  function addChoices(btns){
-    const row = document.createElement('div'); row.className='nano-choices';
-    btns.forEach(({label, id})=>{
-      const chip = document.createElement('button'); chip.className='nano-chip'; chip.textContent = label;
-      chip.addEventListener('click', ()=> handleIntent(id));
-      row.appendChild(chip);
-    });
-    body.appendChild(row); body.scrollTop = body.scrollHeight;
-  }
-  function intro(){
-    body.innerHTML='';
-    addMsg("안녕하세요, 저는 <b>Nano-YJ</b>입니다. 짧은 인터뷰로 YUJIN LEE의 기획 역량을 ‘체험’해보시겠어요?");
-    addChoices([{label:"네, 시작할게요", id:"start"},{label:"이력서 볼래요", id:"resume"},{label:"프로젝트 볼래요", id:"projects"}]);
-  }
-  function handleIntent(id){
-    if(id==='start'){
-      q1();
-    } else if(id==='resume'){
-      addMsg("간단 미리보기와 함께 다운로드 링크를 제공해드릴게요.");
-      addChoices([{label:"미리보기", id:"resume_preview"},{label:"PDF 다운로드", id:"resume_dl"}]);
-    } else if(id==='resume_preview'){
-      addMsg("<b>최근 경력 하이라이트</b><br/>• React KPI 대시보드·문서 통합 총괄<br/>• GPT-4 어시스턴트 UI 초안 설계<br/><a href='docs/resume_yujin_lee.pdf' target='_blank'>자세히 보기(PDF)</a>");
-      addChoices([{label:"프로젝트 보러가기", id:"projects"},{label:"닫기", id:"close"}]);
-    } else if(id==='resume_dl'){
-      window.open('docs/resume_yujin_lee.pdf','_blank');
-    } else if(id==='projects'){
-      addMsg("관심 있는 프로젝트를 선택하세요.");
-      addChoices([{label:"MetraForge AI", id:"p_metra"},{label:"SmartStock AI", id:"p_smart"},{label:"10-Second Challenge", id:"p_10sec"}]);
-    } else if(id==='p_metra'){
-      addMsg("<b>MetraForge AI</b><br/>• TCN+Tabular 하이브리드 품질보증<br/>• PR-AUC 0.9667, ROC-AUC 0.9983<br/><a href='docs/metraforge_final_report.pdf' target='_blank'>최종보고서</a> · <a href='docs/metraforge_presentation.pdf' target='_blank'>발표자료</a>");
-    } else if(id==='p_smart'){
-      addMsg("<b>SmartStock AI</b><br/>• LSTM+CNN 수요예측·EOQ/ROP/SS<br/>• WAPE ≤15%, Fill Rate ≥95% 목표<br/><a href='docs/smartstock_final_report.pdf' target='_blank'>최종보고서</a> · <a href='docs/smartstock_user_guide.pdf' target='_blank'>유저가이드</a>");
-    } else if(id==='p_10sec'){
-      addMsg("<b>10-Second Challenge</b><br/>• 포즈 인식·자동촬영·점수 피드백<br/><a href='docs/10sec_presentation.pdf' target='_blank'>발표자료</a>");
-    } else if(id==='close'){
-      close();
-    }
-  }
-  function q1(){
-    addMsg("<b>Q1.</b> 어떤 도메인에 관심이 있으신가요?");
-    addChoices([{label:"제조·물류", id:"d1"},{label:"플랫폼·SaaS", id:"d2"},{label:"실험적 프로토타입", id:"d3"}]);
-    window.__answers = {domain:null, priority:null, format:null};
-  }
-  function q2(){
-    addMsg("<b>Q2.</b> 무엇이 더 중요하신가요?");
-    addChoices([{label:"문제정의", id:"p1"},{label:"데이터→인사이트", id:"p2"},{label:"의사결정 자동화", id:"p3"},{label:"협업 프로세스", id:"p4"}]);
-  }
-  function q3(){
-    addMsg("<b>Q3.</b> 살펴볼 자료 형태를 골라주세요.");
-    addChoices([{label:"요약 슬라이드", id:"f1"},{label:"상세 보고서", id:"f2"},{label:"목업/대시보드", id:"f3"}]);
-  }
-  function result(){
-    const a = window.__answers;
-    addMsg("선택 기반 추천입니다. 아래 프로젝트를 권합니다:");
-    const list = document.createElement('div'); list.className='nano-choices';
-    [
-      {label:"MetraForge AI — 품질보증", link:"projects.html#metraforge"},
-      {label:"SmartStock AI — 수요·정책", link:"projects.html#smartstock"},
-      {label:"10-Second Challenge — 프로토타입", link:"projects.html#tensec"}
-    ].forEach(x=>{
-      const chip=document.createElement('a'); chip.className='nano-chip'; chip.textContent=x.label; chip.href=x.link; chip.target="_blank"; list.appendChild(chip);
-    });
-    body.appendChild(list);
-    const foot = document.createElement('div'); foot.className='nano-footer';
-    const btnAll=document.createElement('button'); btnAll.className='nano-close'; btnAll.textContent='전체 보기'; btnAll.addEventListener('click',()=>{window.open('projects.html','_blank')});
-    const btnClose=document.createElement('button'); btnClose.className='nano-primary'; btnClose.textContent='닫기'; btnClose.addEventListener('click', ()=>{document.querySelector('.nano-close').click();});
-    foot.append(btnAll, btnClose); body.appendChild(foot);
-  }
-  document.addEventListener('click', (e)=>{
-    if(e.target.classList.contains('nano-chip')){
-      const id=e.target.textContent;
-    }
-  });
-  document.addEventListener('click', (e)=>{
-    const id=e.target && e.target.getAttribute('data-id');
-    if(!id) return;
-  });
-  if(send){
-    send.addEventListener('click', ()=>{
-      const v=(input.value||'').trim(); if(!v) return;
-      addMsg(v,'user'); input.value='';
-      setTimeout(()=> addMsg('준비 중인 기능입니다. 선택지를 사용해보세요.'), 400);
-    });
-  }
-  // map chip ids
-  document.addEventListener('click', (e)=>{
-    if(!e.target.classList.contains('nano-chip')) return;
-    const t=e.target.textContent;
-    const map = {
- 
-      "이력서 볼래요":()=>handleIntent('resume'),
-      "프로젝트 볼래요":()=>handleIntent('projects'),
-      "미리보기":()=>handleIntent('resume_preview'),
-      "PDF 다운로드":()=>handleIntent('resume_dl'),
-      "MetraForge AI":()=>handleIntent('p_metra'),
-      "SmartStock AI":()=>handleIntent('p_smart'),
-      "10-Second Challenge":()=>handleIntent('p_10sec'),
-    };
-    if(map[t]) return map[t]();
-    // Interview chips
-    const a = window.__answers || (window.__answers={});
-    if(['제조·물류','플랫폼·SaaS','실험적 프로토타입'].includes(t)){ a.domain=t; return q2(); }
-    if(['문제정의','데이터→인사이트','의사결정 자동화','협업 프로세스'].includes(t)){ a.priority=t; return q3(); }
-    if(['요약 슬라이드','상세 보고서','목업/대시보드'].includes(t)){ a.format=t; return result(); }
-  });
-})();
-
 
 // --- Typing animation for hero sub intro (word-by-word, slower) ---
 (function(){
@@ -492,7 +364,7 @@ console.log('© 2025 Yujin Lee. All rights reserved.');
   typeWord();
 })();
 
-// ===== Project slider arrows (outside controls, auto 유지 + 수동 이동) =====
+// ===== Project slider (자동 스크롤 + 버튼 수동 이동) =====
 (function(){
   document.querySelectorAll('.slider-wrap').forEach(wrap=>{
     const slider = wrap.querySelector('.slider');
@@ -502,31 +374,90 @@ console.log('© 2025 Yujin Lee. All rights reserved.');
     const nextBtn = wrap.querySelector('.slider-arrow.next');
     if(!slider || !track || !slides.length || !prevBtn || !nextBtn) return;
 
-    // 한 칸 이동폭 계산 (카드 폭 + gap)
-    const rect1 = slides[0].getBoundingClientRect();
-    const rect2 = slides[1] ? slides[1].getBoundingClientRect() : null;
-    const gap   = rect2 ? Math.round(rect2.left - (rect1.left + rect1.width)) : 30;
-    const step  = Math.round(rect1.width + gap);
+    const gap = 30;
+    let currentIndex = 0;
+    let resumeTimer = null;
 
-    let offset = 0;
-    let timer  = null;
-    const RESUME_AFTER = 2000; // 수동 조작 후 자동복귀(ms)
-
-    function go(dir){ // dir: +1 next, -1 prev
-      slider.classList.add('slider--manual');
-      offset += (dir * -step);              // next → 음수, prev → 양수
-      track.style.setProperty('--offset', offset + 'px');
-
-      clearTimeout(timer);
-      timer = setTimeout(()=>{
-        slider.classList.remove('slider--manual');
-        track.style.removeProperty('--offset');
-        offset = 0;
-      }, RESUME_AFTER);
+    // 카드 1개 너비 + gap
+    function getStepWidth() {
+      return slides[0].offsetWidth + gap;
     }
 
-    prevBtn.addEventListener('click', ()=> go(-1));
-    nextBtn.addEventListener('click', ()=> go(+1));
+    // 화면에 보이는 카드 수
+    function getVisibleCount() {
+      const sliderWidth = slider.offsetWidth;
+      return Math.floor((sliderWidth + gap) / getStepWidth());
+    }
+
+    // 최대 스크롤 거리 (마지막 카드가 오른쪽 끝에 닿을 때까지만)
+    function getMaxScrollDistance() {
+      const sliderWidth = slider.offsetWidth;
+      const totalTrackWidth = (slides.length * getStepWidth()) - gap; // 마지막 gap 제외
+      return Math.max(0, totalTrackWidth - sliderWidth);
+    }
+
+    // 자동 스크롤 설정 (여백 없이 마지막 카드까지만)
+    function setupAutoScroll() {
+      const maxDistance = getMaxScrollDistance();
+      const duration = slides.length * 4; // 카드당 4초
+      track.style.setProperty('--scroll-distance', `${maxDistance}px`);
+      track.style.setProperty('--scroll-duration', `${duration}s`);
+    }
+
+    // 수동 모드로 전환하여 특정 위치로 이동
+    function goToIndex(index) {
+      slider.classList.add('slider--manual');
+
+      const stepWidth = getStepWidth();
+      const maxDistance = getMaxScrollDistance();
+      let offset = index * stepWidth;
+
+      // 마지막 위치에서 여백이 생기지 않도록 보정
+      if (offset > maxDistance) {
+        offset = maxDistance;
+      }
+
+      track.style.setProperty('--offset', `-${offset}px`);
+
+      // 일정 시간 후 자동 스크롤 재개
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        slider.classList.remove('slider--manual');
+        track.style.removeProperty('--offset');
+        currentIndex = 0;
+      }, 4000);
+    }
+
+    function goNext() {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(0, slides.length - visibleCount);
+
+      currentIndex++;
+      if (currentIndex > maxIndex) {
+        currentIndex = 0;
+      }
+      goToIndex(currentIndex);
+    }
+
+    function goPrev() {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(0, slides.length - visibleCount);
+
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = maxIndex;
+      }
+      goToIndex(currentIndex);
+    }
+
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+
+    // 초기 설정
+    setupAutoScroll();
+
+    // 윈도우 리사이즈 시 재계산
+    window.addEventListener('resize', setupAutoScroll);
   });
 })();
 

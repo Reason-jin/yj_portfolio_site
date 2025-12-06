@@ -1,0 +1,5 @@
+# Exclude large files from Vercel deployment
+docs/10sec_resize.mp4
+node_modules/
+.git/
+.env
