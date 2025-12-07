@@ -3,31 +3,71 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Y.J. LEE | Portfolio</title>
+<title>YUJIN LEE | AI Product Planner Portfolio</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="이유진(YUJIN LEE) - AI Product Planner & Backend System Planner. MetraForge AI, SmartStock AI, 아이토리 등 AI 프로젝트 포트폴리오."/>
+<meta name="keywords" content="이유진, YUJIN LEE, AI, Product Manager, PM, 포트폴리오, MetraForge, SmartStock, 아이토리, Backend System Planner"/>
+<meta name="author" content="YUJIN LEE"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://yjportfoliosite.vercel.app/"/>
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="YUJIN LEE | AI Product Planner Portfolio"/>
+<meta property="og:description" content="데이터 기반 의사결정과 사용자 중심 기획을 핵심 역량으로 하는 AI Product Planner 이유진의 포트폴리오입니다."/>
+<meta property="og:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+<meta property="og:url" content="https://yjportfoliosite.vercel.app/"/>
+<meta property="og:site_name" content="YUJIN LEE Portfolio"/>
+<meta property="og:locale" content="ko_KR"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="YUJIN LEE | AI Product Planner Portfolio"/>
+<meta name="twitter:description" content="AI Product Planner 이유진의 포트폴리오 - MetraForge AI, SmartStock AI, 아이토리 프로젝트"/>
+<meta name="twitter:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#667eea"/>
+<meta name="msapplication-TileColor" content="#667eea"/>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <link rel="stylesheet" href="assets/styles.css"/>
 <link rel="icon" href="assets/images/profile.png"/>
+<link rel="apple-touch-icon" href="assets/images/profile.png"/>
 
 </head>
 <body>
-<nav class="navbar">
+<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+<nav class="navbar" role="navigation" aria-label="메인 내비게이션">
   <div class="nav-container">
-    <a href="index.html" class="nav-logo"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
-    <ul class="nav-menu">
-      <li><a class="nav-link" href="index.html">HOME</a></li>
-      <li><a class="nav-link" href="about.html">ABOUT</a></li>
-      <li><a class="nav-link" href="projects.html">PROJECT</a></li>
+    <a href="index.html" class="nav-logo" aria-label="홈페이지로 이동"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
+    <ul class="nav-menu" role="menubar">
+      <li role="none"><a class="nav-link" href="index.html" role="menuitem" aria-current="page">HOME</a></li>
+      <li role="none"><a class="nav-link" href="about.html" role="menuitem">ABOUT</a></li>
+      <li role="none"><a class="nav-link" href="projects.html" role="menuitem">PROJECT</a></li>
+      <li role="none"><a class="nav-link" href="en/index.html" role="menuitem" style="color:#6BBCC6">EN</a></li>
     </ul>
-    <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </div>
 </nav>
 <div class="page-space"></div>
 
 <!-- Hero Section -->
-<section class="hero" id="home">
+<main id="main-content">
+<section class="hero" id="home" aria-labelledby="hero-title">
   <div class="hero-container">
     <div class="hero-content">
       <div>
-        <h1 class="hero-title hero-title--stack">
+        <h1 id="hero-title" class="hero-title hero-title--stack">
           <span class="gradient-text">사용자와 현장을 이해하는</span>
           <span class="gradient-text">주니어 Product Manager</span>
           <span class="gradient-text name">YUJIN LEE</span>
@@ -36,13 +76,14 @@
         <p class="hero-subtitle typing-line"
           data-text="데이터로 말하고, 사용자 관점에서 생각하며,작게 실험하고 빠르게 배우는 서비스 기획자입니다."></p>
 
-        <div class="hero-buttons" style="margin-top:20px;">
+        <div class="hero-buttons" style="margin-top:20px; display:flex; gap:15px;">
           <!-- About Me 스타일 유지 버튼 -->
           <a class="btn btn-secondary about-style" href="docs/resume_yujin_lee.pdf" target="_blank">이력서 다운로드</a>
+          <a class="btn btn-primary" href="portfolio.html" target="_blank" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border:none;">포트폴리오 보기</a>
         </div>
       </div>
       <div class="profile-card">
-        <img class="profile-photo" src="assets/images/profile.png" alt="Yujin Lee Profile"/>
+        <img class="profile-photo" src="assets/images/profile.png" alt="이유진 프로필 사진" width="300" height="300" loading="eager"/>
       </div>
     </div>
   </div>
@@ -172,7 +213,7 @@
           <!-- 아이토리 -->
           <div class="project-card slide">
             <div class="project-image">
-              <img src="docs/아이토리.png" alt="아이토리 (iTory)">
+              <img src="docs/아이토리.png" alt="아이토리 (iTory)" loading="lazy">
             </div>
             <div class="project-content">
               <div class="project-title">아이토리 (iTory) — AI 전래동화 플랫폼</div>
@@ -187,7 +228,7 @@
           <!-- MetraForge -->
           <div class="project-card slide">
             <div class="project-image">
-              <img src="docs/metraforge.png" alt="MetraForge AI">
+              <img src="docs/metraforge.png" alt="MetraForge AI" loading="lazy">
             </div>
             <div class="project-content">
               <div class="project-title">MetraForge AI — 지능형 금속가공 품질</div>
@@ -202,7 +243,7 @@
           <!-- SmartStock -->
           <div class="project-card slide">
             <div class="project-image">
-              <img src="docs/smartstock_AI Workflow.png" alt="SmartStock AI">
+              <img src="docs/smartstock_AI Workflow.png" alt="SmartStock AI" loading="lazy">
             </div>
             <div class="project-content">
               <div class="project-title">SmartStock AI — 수요·재고 정책</div>
@@ -217,7 +258,7 @@
           <!-- 10-Second -->
           <div class="project-card slide">
             <div class="project-image">
-              <img src="docs/10sec.png" alt="10-Second Challenge">
+              <img src="docs/10sec.png" alt="10-Second Challenge" loading="lazy">
             </div>
             <div class="project-content">
               <div class="project-title">10-Second Challenge — 포즈 챌린지 촬영</div>
@@ -245,7 +286,7 @@
   <div class="container">
     <div>© 2025 Yujin Lee. All rights reserved.</div>
     <div style="margin-top:8px; font-size:.95rem; color:#9aa0a6">
-      GitHub: <a href="https://github.com/Reason-jin" target="_blank" style="color:#9DB7D5">Reason-jin</a> · 
+      GitHub: <a href="https://github.com/Reason-jin" target="_blank" rel="noopener noreferrer" style="color:#9DB7D5">Reason-jin</a> · 
       Email: <a href="mailto:yujin2ee@naver.com" style="color:#9DB7D5">yujin2ee@naver.com</a>
     </div>
   </div>
@@ -257,11 +298,17 @@
     <div class="head"></div><div class="antenna"></div><div class="body"></div>
   </div>
 </button>
-<div class="nano-overlay"></div>
-<div class="nano-modal">
+</main>
+
+<!-- Chatbot -->
+<div class="nano-overlay" role="presentation"></div>
+<div class="nano-modal" role="dialog" aria-label="AI 챗봇" aria-modal="true">
   <div class="nano-header">
-    <div class="title">Nano-YJ — 기획 역량 체험</div>
-    <button class="nano-close">닫기</button>
+    <div class="title">Nano-YJ — AI Assistant</div>
+    <div class="nano-header-actions">
+      <button class="nano-lang-btn" onclick="window.nanoYJUI?.toggleLanguage()" title="한국어/English">KO/EN</button>
+      <button class="nano-close">✕</button>
+    </div>
   </div>
   <div class="nano-body"></div>
   <div class="nano-input">
@@ -274,5 +321,10 @@
 <script src="assets/chatbot-scenarios.js"></script>
 <script src="assets/chatbot-ui.js"></script>
 <script src="assets/script.js"></script>
+
+<!-- Vercel Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Speed Insights -->
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

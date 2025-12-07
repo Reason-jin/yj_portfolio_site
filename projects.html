@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로젝트 - YuJin Portfolio</title>
-    <link rel="stylesheet" href="./assets/styles.css"> 
+    <title>Projects | YUJIN LEE - AI 프로젝트 포트폴리오</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="이유진의 AI 프로젝트 - MetraForge AI(품질예측), SmartStock AI(수요예측), 아이토리(동화생성), 10-Second Challenge(포즈인식)"/>
+    <meta name="keywords" content="MetraForge AI, SmartStock AI, 아이토리, 10-Second Challenge, AI 프로젝트, PM 포트폴리오"/>
+    <meta name="author" content="YUJIN LEE"/>
+    <link rel="canonical" href="https://yjportfoliosite.vercel.app/projects.html"/>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Projects | YUJIN LEE - AI 프로젝트 포트폴리오"/>
+    <meta property="og:description" content="MetraForge AI, SmartStock AI, 아이토리, 10-Second Challenge 등 AI 프로젝트"/>
+    <meta property="og:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+    <meta property="og:url" content="https://yjportfoliosite.vercel.app/projects.html"/>
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#667eea"/>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./assets/styles.css">
     <link rel="stylesheet" href="./assets/projects.css">
+    <link rel="icon" href="assets/images/profile.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght+100;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        
+    <nav class="navbar" role="navigation" aria-label="메인 내비게이션">
         <div class="nav-container">
-            <a href="./index.html" class="nav-logo"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
-            <ul class="nav-menu">
-                <li><a class="nav-link" href="./index.html">HOME</a></li>
-                <li><a class="nav-link" href="./about.html">ABOUT</a></li>
-                <li><a class="nav-link active" href="./projects.html">PROJECT</a></li> 
+            <a href="./index.html" class="nav-logo" aria-label="홈페이지로 이동"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a class="nav-link" href="./index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a class="nav-link" href="./about.html" role="menuitem">ABOUT</a></li>
+                <li role="none"><a class="nav-link active" href="./projects.html" role="menuitem" aria-current="page">PROJECT</a></li>
+                <li role="none"><a class="nav-link" href="./en/projects.html" role="menuitem" style="color:#6BBCC6">EN</a></li>
             </ul>
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
@@ -155,7 +183,7 @@
                 
                 <div class="project-visual-wrap">
                     <div class="project-image-wrap">
-                        <img src="./docs/smartstock.png" alt="SmartStock AI 대시보드">
+                        <img src="./docs/smartstock.png" alt="SmartStock AI 대시보드" loading="lazy">
                     </div>
                     <div class="project-actions container">
                         <a href="./docs/smartstock_final_report.pdf" class="btn btn-primary">최종 보고서</a>
@@ -370,17 +398,37 @@
                 </div>
 
                 <div class="project-visual-wrap">
-                    <div class="project-image-wrap">
-                        <object data="./docs/시스템 구성도.pdf" type="application/pdf" width="100%" height="600px">
-                            <p>시스템 구성도를 보려면 <a href="./docs/시스템 구성도.pdf" target="_blank">여기를 클릭</a>하세요.</p>
-                        </object>
+                    <div class="project-image-wrap itory-slideshow-wrap">
+                        <div class="itory-slideshow">
+                            <div class="itory-slide-track">
+                                <img src="./docs/itory1.PNG" alt="아이토리 화면 1" loading="lazy">
+                                <img src="./docs/itory2.PNG" alt="아이토리 화면 2" loading="lazy">
+                                <img src="./docs/itory3.PNG" alt="아이토리 화면 3" loading="lazy">
+                                <img src="./docs/itory4.PNG" alt="아이토리 화면 4" loading="lazy">
+                                <img src="./docs/itory5.PNG" alt="아이토리 화면 5" loading="lazy">
+                                <img src="./docs/itory6.PNG" alt="아이토리 화면 6" loading="lazy">
+                                <img src="./docs/itory7.PNG" alt="아이토리 화면 7" loading="lazy">
+                                <img src="./docs/itory8.PNG" alt="아이토리 화면 8" loading="lazy">
+                                <img src="./docs/itory9.PNG" alt="아이토리 화면 9" loading="lazy">
+                                <img src="./docs/itory10.PNG" alt="아이토리 화면 10" loading="lazy">
+                                <img src="./docs/itory11.PNG" alt="아이토리 화면 11" loading="lazy">
+                                <img src="./docs/itory12.PNG" alt="아이토리 화면 12" loading="lazy">
+                                <!-- 무한 루프를 위한 복제 -->
+                                <img src="./docs/itory1.PNG" alt="아이토리 화면 1" loading="lazy">
+                                <img src="./docs/itory2.PNG" alt="아이토리 화면 2" loading="lazy">
+                                <img src="./docs/itory3.PNG" alt="아이토리 화면 3" loading="lazy">
+                                <img src="./docs/itory4.PNG" alt="아이토리 화면 4" loading="lazy">
+                                <img src="./docs/itory5.PNG" alt="아이토리 화면 5" loading="lazy">
+                                <img src="./docs/itory6.PNG" alt="아이토리 화면 6" loading="lazy">
+                            </div>
+                        </div>
                     </div>
                     <div class="project-actions container">
                         <a href="https://drive.google.com/file/d/1JNPF4smRGib5erz0Xg5EJ0JRZ7LIQyfA/view?usp=drive_link" class="btn btn-primary" target="_blank">시스템 아키텍처</a>
                         <a href="https://docs.google.com/spreadsheets/d/1FumutktX6VZcnG2TZGOnX7ONDWDyPiPC2VMnMi0Tbrc/edit?gid=0#gid=0" class="btn btn-secondary" target="_blank">기술스택정의서</a>
                         <a href="https://www.canva.com/design/DAG46852gkw/t4RjPL6aqQBbNkuPqOoRPg/edit?utm_content=DAG46852gkw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-secondary" target="_blank">시스템 구성도</a>
                         <a href="https://docs.google.com/spreadsheets/d/1PDs3U1VkHI-x2EYcZHWP-8IPLkDX18dzrWuwcEHjCtA/edit?gid=1845099267#gid=1845099267" class="btn btn-secondary" target="_blank">WBS&마일스톤</a>
-                        <a href="https://drive.google.com/file/d/1Hj0dSbUtCj50sHuWh7Z3fQJ6hliz-wrF/view?usp=drive_link" class="btn btn-secondary" target="_blank">성장 시뮬레이션</a>
+                        <a href="./aitori_growth_simulator.html" class="btn btn-secondary" target="_blank">성장 시뮬레이션</a>
                         <a href="https://docs.google.com/document/d/1juURTeXuczjiNC7a6kQbJ_fVNvJXZze2/edit?pli=1" class="btn btn-secondary" target="_blank">프로젝트 정의서</a>
                     </div>
                 </div>
@@ -509,5 +557,9 @@
     <!-- Nano-YJ Scripts -->
     <script src="./assets/chatbot-scenarios.js"></script>
     <script src="./assets/chatbot-ui.js"></script>
+
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

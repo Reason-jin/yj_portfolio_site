@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUJIN LEE - AI Product Planner Portfolio</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="이유진(YUJIN LEE) 포트폴리오 - AI Product Planner & Backend System Planner. 데이터 기반 의사결정과 사용자 중심 기획 전문."/>
+<meta name="keywords" content="이유진, YUJIN LEE, AI Product Planner, PM, Backend System Planner, 포트폴리오"/>
+<meta name="author" content="YUJIN LEE"/>
+<link rel="canonical" href="https://yjportfoliosite.vercel.app/portfolio.html"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="YUJIN LEE - AI Product Planner Portfolio"/>
+<meta property="og:description" content="데이터 기반 의사결정과 사용자 중심 기획을 핵심 역량으로 하는 AI Product Planner"/>
+<meta property="og:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+<meta property="og:url" content="https://yjportfoliosite.vercel.app/portfolio.html"/>
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#111111"/>
+<link rel="icon" href="assets/images/profile.png"/>
+
+<!-- Google Fonts: 나눔고딕 (Nanum Gothic) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* =========================================
+       1. Design System (Dark & Professional)
+       ========================================= */
+    :root {
+        --bg-color: #111111;       
+        --bg-sidebar: #181818;     
+        --bg-card: #222222;        
+        --text-white: #FFFFFF;     
+        --text-gray: #DDDDDD;      
+        --text-muted: #999999;     
+        --accent: #D4FF00;         /* 네온 라임: 핵심 포인트 */
+        --border: #333333;         
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+        background: #555; 
+        /* 폰트 변경: Pretendard -> Nanum Gothic */
+        font-family: 'Nanum Gothic', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* A4 세로 규격 (210mm x 297mm) */
+    .slide {
+        width: 210mm;
+        height: 297mm;
+        background-color: var(--bg-color);
+        color: var(--text-gray);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+        box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    /* 타이포그래피 */
+    h1 { font-size: 52px; font-weight: 800; color: var(--text-white); line-height: 1; letter-spacing: -1.5px; margin-bottom: 10px; }
+    h2 { font-size: 28px; font-weight: 700; color: var(--text-white); margin-bottom: 25px; display: flex; align-items: center; letter-spacing: -0.5px; border-bottom: 2px solid #333; padding-bottom: 15px; width: 100%; }
+    h2::before { content: ''; display: inline-block; width: 8px; height: 28px; background: var(--accent); margin-right: 15px; }
+    h3 { font-size: 22px; font-weight: 700; color: var(--text-white); margin-bottom: 8px; }
+    h4 { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    p { font-size: 14px; line-height: 1.65; color: var(--text-gray); margin-bottom: 12px; word-break: keep-all; }
+    
+    .role-badge { 
+        display: inline-block; background: #333; color: #fff; padding: 4px 10px; 
+        border-radius: 4px; font-size: 12px; font-weight: 700; margin-left: 10px; vertical-align: middle;
+    }
+    .period { font-size: 14px; color: #888; font-weight: 700; float: right; margin-top: 5px; }
+    
+    /* 성과 강조 스타일 */
+    .highlight { color: var(--accent); font-weight: 700; }
+    .strong { color: #fff; font-weight: 700; }
+    
+    /* 리스트 스타일 */
+    .work-list { list-style: none; padding-left: 5px; }
+    .work-list li { 
+        position: relative; padding-left: 18px; margin-bottom: 12px; 
+        font-size: 14px; color: #ddd; line-height: 1.6;
+    }
+    .work-list li::before {
+        content: '▹'; position: absolute; left: 0; color: var(--accent); font-size: 14px; top: 2px;
+    }
+
+    /* 카드형 레이아웃 */
+    .card-box {
+        background: var(--bg-card);
+        border: 1px solid #333;
+        padding: 30px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        flex: 1; /* 카드 높이 자동 확장 */
+    }
+    .card-header {
+        display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+        border-bottom: 1px solid #444; padding-bottom: 10px;
+    }
+
+    /* 2단 레이아웃 */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    
+    /* 비주얼 박스 (이미지) */
+    .visual-box {
+        width: 100%; height: 280px;
+        background: #151515; border: 1px solid #333;
+        display: flex; justify-content: center; align-items: center;
+        color: #666; font-size: 14px; position: relative; margin-bottom: 30px;
+    }
+
+    /* =========================================
+       PAGE 1: COVER
+       ========================================= */
+    .p1-layout { display: flex; height: 100%; margin: -50px; } 
+    .p1-sidebar {
+        width: 38%; background: var(--bg-sidebar); padding: 60px 30px;
+        border-right: 1px solid #333; display: flex; flex-direction: column;
+    }
+    .p1-main {
+        width: 62%; padding: 80px 60px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .profile-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: transparent; margin-bottom: 40px; border: none; }
+    
+    .cert-item { font-size: 13px; color: #aaa; margin-bottom: 4px; }
+
+    @media print {
+        body { background: none; margin: 0; padding: 0; }
+        .slide { margin: 0; box-shadow: none; page-break-after: always; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- =======================================================
+         PAGE 1: COVER & PROFILE
+         ======================================================= -->
+    <div class="slide">
+        <div class="p1-layout">
+            <aside class="p1-sidebar">
+                <img src="docs/yujinlee.png" class="profile-img" alt="Profile">
+                
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color:var(--accent);">Contact</h4>
+                    <p style="color:#fff; margin:0;">yujin2ee@naver.com</p>
+                    <p style="color:#fff; margin:0;">010-3339-1430</p>
+                    <p style="color:#fff; margin:0;">GitHub: Reason-jin</p>
+                    <p style="color:#fff; margin:0;">Website: yjportfoliosite.vercel.app</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color:var(--accent);">Education</h4>
+                    <p class="strong" style="margin:0;">MBC 아카데미 AI+X 과정</p>
+                    <p style="font-size:13px; color:#888; margin-bottom:8px;">2025.07 - 2025.12 (수료 예정)</p>
+                </div>
+
+                <div style="margin-top: auto;">
+                    <h4 style="color:var(--accent); margin-bottom:10px;">Certifications</h4>
+                    <div class="cert-item">컴퓨터활용능력 2급 (대한상공회의소)</div>
+                    <div class="cert-item">워드프로세서 1급 (대한상공회의소)</div>
+                    <div class="cert-item">FAT(전산회계) 2급 (한국세무사회)</div>
+                    <div class="cert-item">SMAT(서비스경영) 2급 (한국생산성본부)</div>
+
+                    <div style="margin-top:25px; text-align:center;">
+                        <h4 style="color:var(--accent); margin-bottom:8px;">Web Portfolio</h4>
+                        <img src="docs/qrcode.png" alt="QR Code" style="width:80px; height:80px; background:#fff; padding:4px; border-radius:4px;">
+                        <p style="font-size:10px; color:#888; margin-top:5px;">Scan to visit</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="p1-main">
+                <h4 style="color:#888;">PORTFOLIO</h4>
+                <h1>YUJIN LEE</h1>
+                <p style="font-size:28px; font-weight:700; color:#fff; margin-top:10px;">
+                    <span style="color:var(--accent); margin-right:15px; font-weight:900;">//</span> Backend System Planner
+                </p>
+                
+                <p style="font-size: 18px; margin-top: 30px; font-weight: 300; line-height: 1.5; color:#fff;">
+                    "사용자와 현장을 이해하는 기획자,<br>
+                    <span style="color:var(--accent); font-weight:700;">작게 실험하고 빠르게 배우며 성과를 만드는</span><br>
+                    이유진입니다."
+                </p>
+
+                <div style="margin-top: 25px; border-left: 4px solid var(--accent); padding-left: 20px;">
+                    <p style="color:#fff; font-size: 14px; margin-bottom: 10px; font-weight:700;">Professional Summary</p>
+                    <p style="margin-bottom:6px; font-size:13px; line-height:1.5;">
+                        <span class="strong">1. Documentation & Standardization</span><br>
+                        제안서/보고서의 흐름을 설계하고 템플릿을 표준화하여, 반복 업무 시간을 줄이고 팀 생산성을 높입니다.
+                    </p>
+                    <p style="margin-bottom:6px; font-size:13px; line-height:1.5;">
+                        <span class="strong">2. User-Centric Operation</span><br>
+                        공연 및 교육 현장에서 고객 접점을 경험했습니다. 사용자 여정의 병목을 찾아 UX를 개선합니다.
+                    </p>
+                    <p style="margin-bottom:0; font-size:13px; line-height:1.5;">
+                        <span class="strong">3. Data-Driven Growth</span><br>
+                        감에 의존하지 않고 시장 데이터와 VOC 분석을 통해 근거 있는 기획을 합니다.
+                    </p>
+                </div>
+
+                <!-- Tech Stack -->
+                <div style="margin-top: 40px;">
+                    <p style="color:var(--accent); font-size: 11px; font-weight:700; margin-bottom: 10px; letter-spacing: 1px;">TECH STACK</p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 6px; padding: 10px;">
+                            <div style="color: var(--accent); font-size: 10px; font-weight: 700; margin-bottom: 5px;">Programming & Data</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">Python</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">Pandas</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">NumPy</span>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 6px; padding: 10px;">
+                            <div style="color: var(--accent); font-size: 10px; font-weight: 700; margin-bottom: 5px;">AI / LLM</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">OpenAI API</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">LangChain</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">RAG</span>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 6px; padding: 10px;">
+                            <div style="color: var(--accent); font-size: 10px; font-weight: 700; margin-bottom: 5px;">Web & Backend</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">HTML/CSS/JS</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">FastAPI</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">Streamlit</span>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid #333; border-radius: 6px; padding: 10px;">
+                            <div style="color: var(--accent); font-size: 10px; font-weight: 700; margin-bottom: 5px;">DB & DevOps</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">MySQL</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">Git</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">Docker</span>
+                                <span style="background: #2a2a2a; color: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 9px;">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 2: WORK EXP 01 (ETUON - Deep Dive)
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">WORK EXPERIENCE 01</h2>
+        <p style="margin-bottom:30px; font-size:16px;">
+            B2G 제안 전략 수립부터 프로세스 표준화까지 주도한 핵심 경력
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div class="card-header">
+                <div>
+                    <h3 style="margin:0;">(주)이투온</h3>
+                    <p style="margin:5px 0 0 0; color:var(--accent); font-weight:700;">사업기획팀 연구원 | Strategic Planning & Proposal</p>
+                </div>
+                <div style="text-align:right;">
+                    <!-- [수정됨] 이력서 기준 1년 11개월 반영 -->
+                    <span class="period">2022.05 - 2024.03 (1년 11개월)</span><br>
+                    <span style="font-size:12px; color:#888;">빅데이터/AI 솔루션 전문 기업</span>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom:40px;">
+                <!-- 성과 1 -->
+                <div>
+                    <h4 style="color:#fff; border-bottom:1px solid #444; padding-bottom:5px;">1. B2G 제안 및 수주 전략 총괄</h4>
+                    <p style="color:#ccc; margin-bottom:15px;">
+                        정부·지자체의 AI·데이터 기반 사업 제안 작업을 주도하며, 추상적인 RFP 요구사항을 구체적인 기술 명세와 서비스 시나리오로 기획했습니다.
+                    </p>
+                    <ul class="work-list">
+                        <li><span class="strong">주요 수주 프로젝트:</span> 강남구/대구시 'AI 기반 도시 안전 관리 시스템', '인공지능 학습용 데이터 구축 사업' 제안, 서울시 R&D '중소기업 기술 혁신 개발 사업'</li>
+                        <li><span class="strong">시장 경쟁력 확보:</span> 경쟁사 기술 분석을 통해 자사 솔루션의 차별점(특허 기술 등)을 부각하는 제안 스토리라인 설계.</li>
+                    </ul>
+                </div>
+                
+                <!-- 성과 2 -->
+                <div>
+                    <h4 style="color:#fff; border-bottom:1px solid #444; padding-bottom:5px;">2. 업무 프로세스 표준화 (BPR)</h4>
+                    <p style="color:#ccc; margin-bottom:15px;">
+                        비효율적인 반복 업무를 진단하고, 공용 자산(Asset)을 구축하여 팀 전체의 리드타임을 획기적으로 단축했습니다.
+                    </p>
+                    <ul class="work-list">
+                        <li><span class="strong">제안 템플릿 표준화:</span> 제안서 목차 및 디자인 양식을 통일하여 문서 작성 시간 <span class="highlight">20% 단축</span>.</li>
+                        <li><span class="strong">리서치 아카이빙:</span> 휘발되던 시장 조사 자료를 DB화하여 제안 준비 시 자료 재사용률 <span class="highlight">40% 증대</span>.</li>
+                        <li><span class="strong">On-boarding System:</span> 신규 입사자를 위한 업무 매뉴얼 및 체크리스트 개발로 조기 적응 지원.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background:#1a1a1a; padding:20px; border-radius:4px; border:1px solid #333;">
+                <h4 style="color:var(--accent);">💡 PM Insight</h4>
+                <p style="margin:0;">
+                    "다수의 이해관계자(개발, 영업, 디자인)가 얽힌 제안 작업에서 <strong>가장 중요한 것은 '명확한 문서'와 '합의된 일정'</strong>임을 배웠습니다. 
+                    PM으로서 모호함을 없애고, 마감 기한 내 최상의 품질(Quality)을 내기 위해 리스크를 선제적으로 관리했습니다."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 3: WORK EXP 02 (Operations & CX)
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">WORK EXPERIENCE 02</h2>
+        <p style="margin-bottom:30px; font-size:16px;">
+            고객 접점(Customer Touchpoint) 관리 및 운영 효율화 경험
+        </p>
+        
+        <!-- 금성출판사 -->
+        <div class="card-box" style="margin-bottom:30px;">
+            <div class="card-header">
+                <div>
+                    <h3 style="font-size:20px; margin:0;">금성출판사</h3>
+                    <span class="role-badge">플랫폼 비즈니스팀 | CX & Operation</span>
+                </div>
+                <span class="period">2021.02 - 2021.10 (9개월)</span>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <h4 style="color:#fff;">Achievement</h4>
+                    <ul class="work-list">
+                        <li><span class="strong">서비스 활용률 15% 증대:</span> AI 수학 플랫폼 '매쓰클라우드' 및 '푸르넷 공부방' 온보딩 교육 자료를 개선하여 초기 사용자 이탈 방지.</li>
+                        <li><span class="strong">VoC 시스템화:</span> 고객 문의 데이터를 유형별로 분류하고, FAQ 및 표준 응대 가이드를 정립하여 CS 처리 속도 향상.</li>
+                        <li><span class="strong">신사업 기획 참여:</span> 유아 타겟 학습 태블릿 상품 제안 및 통합 웹 기획 지원.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:#fff;">Key Competency</h4>
+                    <ul class="work-list">
+                        <li><span class="strong">Feedback Loop:</span> 현장의 목소리를 수집하여 프로덕트 개선 백로그로 연결하는 순환 구조 경험.</li>
+                        <li><span class="strong">User Empathy:</span> 교사와 학생, 학부모 등 다양한 사용자 페르소나에 맞춰 커뮤니케이션하는 능력.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 드라폼 -->
+        <div class="card-box">
+            <div class="card-header">
+                <div>
+                    <h3 style="font-size:20px; margin:0;">(주)드라폼</h3>
+                    <span class="role-badge">기획팀 | Project Management</span>
+                </div>
+                <span class="period">2014.01 - 2014.12 (1년)</span>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <h4 style="color:#fff;">Achievement</h4>
+                    <ul class="work-list">
+                        <li><span class="strong">현장 운영 리스크 관리:</span> 드로잉 뮤지컬 '고흐즈', 미디어 전시 등 프로젝트별 인력/일정의 Critical Path를 관리하여 사고 없는 운영 달성.</li>
+                        <li><span class="strong">파트너십 관리:</span> 지자체(양천구), 경찰청 복지몰 등 협력 기관과의 소통 이력을 문서화하여 재협업 효율 증대.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:#fff;">Key Competency</h4>
+                    <ul class="work-list">
+                        <li><span class="strong">Agility:</span> 돌발 상황이 잦은 현장에서 즉각적으로 대안을 찾고 실행하는 문제 해결 능력.</li>
+                        <li><span class="strong">Resource Management:</span> 한정된 예산과 인력을 최적으로 배분하는 관리 역량.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 4: AI PROJECT 01 (iTory)
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">AI+X PROJECT 02</h2>
+        <p style="margin-bottom:20px; font-size:16px; color:#aaa;">
+            생성형 AI 활용 서비스 기획 프로젝트
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px;">
+                <div>
+                    <span style="color:var(--accent); font-weight:700; font-size:14px;">B2C Platform Service</span>
+                    <h1 style="font-size:48px; margin-bottom:5px;">iTory <span style="font-size:24px; font-weight:300; color:#888;">아이토리</span></h1>
+                    <p style="font-size:16px; color:#ccc;">AI 기반 인터랙티브 전래동화 영상 생성 플랫폼</p>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:28px; font-weight:800; color:var(--accent);">Main Project</div>
+                    <div style="font-size:14px; color:#888;">PM & 기획 총괄</div>
+                </div>
+            </div>
+
+            <!-- iTory 비주얼: 스크린샷 + SVG 다이어그램 -->
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <div style="flex:1;">
+                    <img src="docs/itory5.PNG" alt="iTory 동화생성" style="width:100%; height:200px; object-fit:cover; border-radius:8px; border:1px solid #333;">
+                </div>
+            </div>
+            <!-- iTory 서비스 플로우 SVG (축소) -->
+            <div class="visual-box" style="padding:10px; background:#1a1a1a; height:auto; margin-bottom:12px;">
+                <svg viewBox="0 0 720 100" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3a3a3a"/>
+                            <stop offset="100%" style="stop-color:#2a2a2a"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="360" y="15" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">iTory Service Flow</text>
+                    <!-- 플로우 노드들 -->
+                    <rect x="30" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="70" y="50" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">전래동화</text>
+                    <text x="70" y="62" text-anchor="middle" fill="#aaa" font-size="7">선택</text>
+                    <path d="M115 50 L135 50" stroke="#D4FF00" stroke-width="2" marker-end="url(#arrow)"/>
+                    <defs><marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4FF00"/></marker></defs>
+
+                    <rect x="140" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#555"/>
+                    <text x="180" y="50" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">그림체 선택</text>
+                    <text x="180" y="62" text-anchor="middle" fill="#888" font-size="7">5가지 스타일</text>
+                    <path d="M225 50 L245 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="250" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#555"/>
+                    <text x="290" y="47" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">DALL-E 3</text>
+                    <text x="290" y="60" text-anchor="middle" fill="#fff" font-size="8">이미지 생성</text>
+                    <path d="M335 50 L355 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="360" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#555"/>
+                    <text x="400" y="47" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">GPT-4o</text>
+                    <text x="400" y="60" text-anchor="middle" fill="#fff" font-size="8">5막 스토리</text>
+                    <path d="M445 50 L465 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="470" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#555"/>
+                    <text x="510" y="47" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">ElevenLabs</text>
+                    <text x="510" y="60" text-anchor="middle" fill="#fff" font-size="8">TTS+영상</text>
+                    <path d="M555 50 L575 50" stroke="#D4FF00" stroke-width="2"/>
+
+                    <rect x="580" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="620" y="55" text-anchor="middle" fill="#D4FF00" font-size="9" font-weight="700">▶ 영상 완성</text>
+
+                    <!-- 하단 기능 태그 -->
+                    <rect x="180" y="78" width="60" height="18" rx="3" fill="#2a2a2a" stroke="#444"/>
+                    <text x="210" y="90" text-anchor="middle" fill="#aaa" font-size="7">북클럽</text>
+                    <rect x="250" y="78" width="60" height="18" rx="3" fill="#2a2a2a" stroke="#444"/>
+                    <text x="280" y="90" text-anchor="middle" fill="#aaa" font-size="7">내 책장</text>
+                    <rect x="320" y="78" width="80" height="18" rx="3" fill="#2a2a2a" stroke="#D4FF00"/>
+                    <text x="360" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">공유/저장</text>
+                    <rect x="410" y="78" width="60" height="18" rx="3" fill="#2a2a2a" stroke="#444"/>
+                    <text x="440" y="90" text-anchor="middle" fill="#aaa" font-size="7">인기 동화</text>
+                </svg>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:10px; display:inline-block; margin-bottom:15px;">PM Strategy</h3>
+                    <ul class="work-list">
+                        <li><span class="strong">User Choice (5-Style Gen):</span> 아동의 능동적 참여를 위해 동일 스토리를 5가지 화풍(실사/2D/3D 등)으로 재생성하는 아키텍처 설계.</li>
+                        <li><span class="strong">Quality Control (5-Act Structure):</span> 생성형 AI의 환각 현상을 억제하기 위해 발단-전개-위기-절정-결말 구조를 강제하는 프롬프트 엔지니어링 적용.</li>
+                        <li><span class="strong">Profit Model:</span> 구독형(Premium) 모델 설계 및 토큰 비용 최적화(35%→20%)를 통한 Y3 흑자 전환 로드맵 수립.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:10px; display:inline-block; margin-bottom:15px;">Tech & Tools</h3>
+                    <ul class="work-list">
+                        <li><span class="strong">Framework:</span> React 18, FastAPI, Firebase Gen2 (Serverless)</li>
+                        <li><span class="strong">AI Engine:</span> GPT-4o-mini (Story), DALL-E 3 (Image), ElevenLabs (TTS)</li>
+                        <li><span class="strong">My Role:</span> 서비스 기획, 와이어프레임 설계, 수익 모델 시뮬레이션, 개발 일정 관리(WBS).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 5: AI PROJECT 02 (SmartStock)
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">AI+X PROJECT 03</h2>
+        <p style="margin-bottom:20px; font-size:16px; color:#aaa;">
+            현업의 Pain Point를 해결하는 B2B 솔루션 기획
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px;">
+                <div>
+                    <span style="color:var(--accent); font-weight:700; font-size:14px;">B2B SaaS Solution</span>
+                    <h1 style="font-size:48px; margin-bottom:5px;">SmartStock AI</h1>
+                    <p style="font-size:16px; color:#ccc;">중소 제조·유통사를 위한 수요예측 및 자동 발주 시스템</p>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:28px; font-weight:800; color:var(--accent);">WAPE 14.2%</div>
+                    <div style="font-size:14px; color:#888;">예측 오차율 달성</div>
+                </div>
+            </div>
+
+            <!-- SmartStock 비주얼: 스크린샷 + SVG 다이어그램 -->
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <div style="flex:1;">
+                    <img src="docs/smartstock.png" alt="SmartStock 메인" style="width:100%; height:200px; object-fit:cover; border-radius:8px; border:1px solid #333;">
+                </div>
+            </div>
+            <!-- SmartStock 시스템 아키텍처 SVG (축소) -->
+            <div class="visual-box" style="padding:10px; background:#1a1a1a; height:auto; margin-bottom:12px;">
+                <svg viewBox="0 0 720 100" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="nodeGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3a3a3a"/>
+                            <stop offset="100%" style="stop-color:#2a2a2a"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="360" y="15" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">SmartStock AI Architecture</text>
+                    <!-- 플로우 노드들 -->
+                    <rect x="30" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad2)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="70" y="47" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">INPUT</text>
+                    <text x="70" y="60" text-anchor="middle" fill="#fff" font-size="8">CSV 업로드</text>
+                    <path d="M115 50 L135 50" stroke="#D4FF00" stroke-width="2" marker-end="url(#arr3)"/>
+                    <defs><marker id="arr3" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4FF00"/></marker></defs>
+
+                    <rect x="140" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad2)" stroke="#555"/>
+                    <text x="180" y="47" text-anchor="middle" fill="#aaa" font-size="8">전처리</text>
+                    <text x="180" y="60" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">Auto Clean</text>
+                    <path d="M225 50 L245 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="250" y="25" width="100" height="50" rx="6" fill="#252525" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="300" y="43" text-anchor="middle" fill="#D4FF00" font-size="9" font-weight="700">AI Engine</text>
+                    <text x="300" y="56" text-anchor="middle" fill="#fff" font-size="8">LSTM+CNN</text>
+                    <text x="300" y="68" text-anchor="middle" fill="#888" font-size="7">WAPE 14.2%</text>
+                    <path d="M355 50 L375 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="380" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad2)" stroke="#555"/>
+                    <text x="420" y="47" text-anchor="middle" fill="#aaa" font-size="8">재고 정책</text>
+                    <text x="420" y="60" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">EOQ/ROP/SS</text>
+                    <path d="M465 50 L485 50" stroke="#666" stroke-width="2"/>
+
+                    <rect x="490" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad2)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="530" y="47" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">Dashboard</text>
+                    <text x="530" y="60" text-anchor="middle" fill="#fff" font-size="8">시각화</text>
+                    <path d="M575 50 L595 50" stroke="#D4FF00" stroke-width="2"/>
+
+                    <rect x="600" y="30" width="80" height="40" rx="5" fill="url(#nodeGrad2)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="640" y="55" text-anchor="middle" fill="#D4FF00" font-size="9" font-weight="700">✓ 발주 완료</text>
+
+                    <!-- 하단 KPI 태그 -->
+                    <rect x="140" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="175" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">WAPE 14.2%</text>
+                    <rect x="220" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="255" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Fill Rate 96%</text>
+                    <rect x="300" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="335" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">효율 70%↑</text>
+                    <rect x="380" y="78" width="80" height="18" rx="3" fill="#1e1e1e" stroke="#D4FF00"/>
+                    <text x="420" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">AI Copilot</text>
+                </svg>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:10px; display:inline-block; margin-bottom:15px;">Problem & Solution</h3>
+                    <ul class="work-list">
+                        <li><span class="strong">Problem:</span> ERP 도입이 어려운 중소기업은 담당자의 '감'과 '엑셀'에 의존해 재고 비용 낭비가 심함.</li>
+                        <li><span class="strong">Solution 1 (Zero-Integration):</span> 시스템 연동 없이 CSV 업로드만으로 전처리-예측-발주점 계산이 완료되는 '진입장벽 없는' 프로세스 기획.</li>
+                        <li><span class="strong">Solution 2 (AI Copilot):</span> "이번 달 안전재고 얼마 잡을까?" 같은 자연어 질의에 최적 정책을 제안하는 시뮬레이션 기능.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:10px; display:inline-block; margin-bottom:15px;">Outcome</h3>
+                    <ul class="work-list">
+                        <li><span class="strong">High Accuracy:</span> LSTM+CNN 하이브리드 모델로 WAPE 14.2% 달성.</li>
+                        <li><span class="strong">Optimization:</span> Fill Rate(주문 충족률) 96.3% 유지 가능한 최적 발주점(ROP) 자동 산출 로직 설계.</li>
+                        <li><span class="strong">UX Design:</span> 복잡한 데이터 분석 결과를 직관적인 대시보드로 시각화.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 6: AI PROJECT 03 - MetraForge AI (K-AI 경진대회)
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">AI+X PROJECT 04</h2>
+        <p style="margin-bottom:20px; font-size:16px; color:#aaa;">
+            K-AI 경진대회 출품작 — 제조 현장의 실질적 문제 해결
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px;">
+                <div>
+                    <span style="color:var(--accent); font-weight:700; font-size:14px;">K-AI 경진대회 출품</span>
+                    <h1 style="font-size:42px; margin-bottom:5px;">MetraForge AI</h1>
+                    <p style="font-size:15px; color:#ccc;">AI 기반 지능형 금속가공 품질 향상 시스템</p>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:24px; font-weight:800; color:var(--accent);">ROC-AUC 0.9983</div>
+                    <div style="font-size:13px; color:#888;">PR-AUC 0.9667</div>
+                </div>
+            </div>
+
+            <!-- MetraForge 시스템 아키텍처 SVG -->
+            <div class="visual-box" style="padding:10px; background:#1a1a1a; height:auto; margin-bottom:12px;">
+                <svg viewBox="0 0 720 100" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="nodeGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3a3a3a"/>
+                            <stop offset="100%" style="stop-color:#2a2a2a"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="360" y="15" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">MetraForge AI — Hybrid Ensemble Architecture</text>
+                    <!-- 플로우 노드들 -->
+                    <rect x="30" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad3)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="65" y="45" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">PLC 센서</text>
+                    <text x="65" y="57" text-anchor="middle" fill="#fff" font-size="7">5초 로그</text>
+                    <path d="M105 47 L125 47" stroke="#D4FF00" stroke-width="2" marker-end="url(#arrM)"/>
+                    <defs><marker id="arrM" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4FF00"/></marker></defs>
+
+                    <rect x="130" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad3)" stroke="#555"/>
+                    <text x="165" y="45" text-anchor="middle" fill="#aaa" font-size="8">전처리</text>
+                    <text x="165" y="57" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">결측률 0%</text>
+                    <path d="M205 47 L225 47" stroke="#666" stroke-width="2"/>
+
+                    <!-- Hybrid Ensemble 박스 -->
+                    <rect x="230" y="23" width="170" height="50" rx="6" fill="#1e1e1e" stroke="#D4FF00" stroke-width="1.5"/>
+                    <text x="315" y="36" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">Hybrid Ensemble</text>
+                    <rect x="240" y="42" width="65" height="25" rx="3" fill="#252525" stroke="#666"/>
+                    <text x="272" y="58" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">TCN</text>
+                    <rect x="315" y="42" width="75" height="25" rx="3" fill="#252525" stroke="#666"/>
+                    <text x="352" y="58" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">RandomForest</text>
+                    <path d="M405 47 L425 47" stroke="#666" stroke-width="2"/>
+
+                    <rect x="430" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad3)" stroke="#555"/>
+                    <text x="465" y="45" text-anchor="middle" fill="#aaa" font-size="8">Soft</text>
+                    <text x="465" y="57" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">Ensemble</text>
+                    <path d="M505 47 L525 47" stroke="#666" stroke-width="2"/>
+
+                    <rect x="530" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad3)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="565" y="45" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">XAI</text>
+                    <text x="565" y="57" text-anchor="middle" fill="#fff" font-size="7">SHAP</text>
+                    <path d="M605 47 L625 47" stroke="#D4FF00" stroke-width="2"/>
+
+                    <rect x="630" y="28" width="60" height="38" rx="5" fill="url(#nodeGrad3)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="660" y="52" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">! Alert</text>
+
+                    <!-- 하단 KPI 태그 -->
+                    <rect x="120" y="78" width="80" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="160" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">PR-AUC 0.9667</text>
+                    <rect x="210" y="78" width="85" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="252" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">ROC-AUC 0.9983</text>
+                    <rect x="305" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="340" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">리드타임 ≥1분</text>
+                    <rect x="385" y="78" width="85" height="18" rx="3" fill="#1e1e1e" stroke="#D4FF00"/>
+                    <text x="427" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">결측률 1.3%→0%</text>
+                </svg>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:8px; display:inline-block; margin-bottom:12px; font-size:16px;">PM Approach</h3>
+                    <ul class="work-list" style="font-size:13px;">
+                        <li><span class="strong">현장 문제 정의:</span> FP(오탐) 통제로 경보 피로도 해소, 실질적 가치 창출 구조 기획</li>
+                        <li><span class="strong">하이브리드 전략:</span> 정적(RF) + 시계열(TCN) 투 트랙 앙상블로 안정성 확보</li>
+                        <li><span class="strong">XAI 신뢰도:</span> SHAP 기반 피처 중요도 시각화로 현장 작업자 신뢰 확보</li>
+                        <li><span class="strong">선제적 탐지:</span> 불량 발생 전 최소 1분 이상 리드타임 확보 설계</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:8px; display:inline-block; margin-bottom:12px; font-size:16px;">Tech Stack</h3>
+                    <ul class="work-list" style="font-size:13px;">
+                        <li><span class="strong">데이터:</span> PLC 5초 로그 · 1.7만행×20열</li>
+                        <li><span class="strong">모델:</span> TCN + Tabular Soft·Cascade 앙상블</li>
+                        <li><span class="strong">전처리:</span> 이상탐지 · 정규화 · 결측률 0% 개선</li>
+                        <li><span class="strong">개발환경:</span> FastAPI, Streamlit 기반 MVP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 7: AI PROJECT 04 - 10-Second Challenge
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">AI+X PROJECT 05</h2>
+        <p style="margin-bottom:20px; font-size:16px; color:#aaa;">
+            게이미피케이션 UX 설계 — 엔터테인먼트 중심 AI 서비스
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px;">
+                <div>
+                    <span style="color:var(--accent); font-weight:700; font-size:14px;">Rapid Prototype</span>
+                    <h1 style="font-size:42px; margin-bottom:5px;">10-Second Challenge</h1>
+                    <p style="font-size:15px; color:#ccc;">AI 기반 포즈 챌린지 촬영 서비스</p>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:24px; font-weight:800; color:var(--accent);">99%</div>
+                    <div style="font-size:13px; color:#888;">포즈 인식 정확도</div>
+                </div>
+            </div>
+
+            <!-- 10-Second 비주얼: 스크린샷 + SVG 다이어그램 -->
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <div style="flex:1;">
+                    <img src="docs/10sec.png" alt="10-Second Challenge" style="width:100%; height:180px; object-fit:cover; border-radius:8px; border:1px solid #333;">
+                </div>
+            </div>
+            <!-- 10-Second 서비스 플로우 SVG (축소) -->
+            <div class="visual-box" style="padding:10px; background:#1a1a1a; height:auto; margin-bottom:12px;">
+                <svg viewBox="0 0 720 100" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="nodeGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3a3a3a"/>
+                            <stop offset="100%" style="stop-color:#2a2a2a"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="360" y="15" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">10-Second Challenge — Gamification UX Flow</text>
+                    <!-- 플로우 노드들 -->
+                    <rect x="30" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad4)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="65" y="45" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">포즈 선택</text>
+                    <text x="65" y="57" text-anchor="middle" fill="#fff" font-size="7">5가지 컨셉</text>
+                    <path d="M105 47 L125 47" stroke="#D4FF00" stroke-width="2" marker-end="url(#arr10)"/>
+                    <defs><marker id="arr10" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#D4FF00"/></marker></defs>
+
+                    <rect x="130" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad4)" stroke="#555"/>
+                    <text x="165" y="45" text-anchor="middle" fill="#aaa" font-size="8">웹캠</text>
+                    <text x="165" y="57" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">실시간 인식</text>
+                    <path d="M205 47 L225 47" stroke="#666" stroke-width="2"/>
+
+                    <!-- Hybrid 박스 -->
+                    <rect x="230" y="23" width="170" height="50" rx="6" fill="#1e1e1e" stroke="#D4FF00" stroke-width="1.5"/>
+                    <text x="315" y="36" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">Hybrid Pose Detection</text>
+                    <rect x="240" y="42" width="70" height="25" rx="3" fill="#252525" stroke="#666"/>
+                    <text x="275" y="58" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">MediaPipe</text>
+                    <rect x="320" y="42" width="70" height="25" rx="3" fill="#252525" stroke="#666"/>
+                    <text x="355" y="58" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">YOLOv8</text>
+                    <path d="M405 47 L425 47" stroke="#666" stroke-width="2"/>
+
+                    <rect x="430" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad4)" stroke="#555"/>
+                    <text x="465" y="42" text-anchor="middle" fill="#aaa" font-size="7">피드백</text>
+                    <text x="465" y="53" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">Bad/Good</text>
+                    <text x="465" y="62" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Perfect!</text>
+                    <path d="M505 47 L525 47" stroke="#666" stroke-width="2"/>
+
+                    <rect x="530" y="28" width="70" height="38" rx="5" fill="url(#nodeGrad4)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="565" y="45" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">OUTPUT</text>
+                    <text x="565" y="57" text-anchor="middle" fill="#fff" font-size="7">사진+영상</text>
+                    <path d="M605 47 L625 47" stroke="#D4FF00" stroke-width="2"/>
+
+                    <rect x="630" y="28" width="60" height="38" rx="5" fill="url(#nodeGrad4)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="660" y="52" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">SNS 공유</text>
+
+                    <!-- 하단 KPI 태그 -->
+                    <rect x="140" y="78" width="65" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="172" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">인식률 99%</text>
+                    <rect x="215" y="78" width="65" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="247" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">동시 1~4인</text>
+                    <rect x="290" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="325" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">포즈 5가지</text>
+                    <rect x="370" y="78" width="70" height="18" rx="3" fill="#1e1e1e" stroke="#D4FF00"/>
+                    <text x="405" y="90" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">사진+영상</text>
+                </svg>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:8px; display:inline-block; margin-bottom:12px; font-size:16px;">Service Design</h3>
+                    <ul class="work-list" style="font-size:13px;">
+                        <li><span class="strong">게이미피케이션 UX:</span> 포즈 정확도 측정 + 자동 촬영으로 '미션 수행' 체험 설계</li>
+                        <li><span class="strong">하이브리드 인식:</span> MediaPipe(실시간) + YOLOv8(정밀) 조합으로 99% 정확도</li>
+                        <li><span class="strong">바이럴 전략:</span> 사진+영상 결과물 제공으로 SNS 공유 최적화</li>
+                        <li><span class="strong">적용 시나리오:</span> 체험 공간·행사·프로모션 부스 등 다양한 활용</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:8px; display:inline-block; margin-bottom:12px; font-size:16px;">Tech Stack</h3>
+                    <ul class="work-list" style="font-size:13px;">
+                        <li><span class="strong">개발 환경:</span> Python · Streamlit</li>
+                        <li><span class="strong">AI 모델:</span> YOLOv8 Pose + MediaPipe Hybrid</li>
+                        <li><span class="strong">UX 구현:</span> 게이미피케이션 · 리더보드 시스템</li>
+                        <li><span class="strong">기능:</span> 세션 기록 · 참여자별 성과 추적</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 8: AI PROJECT 05 - Nano-YJ Chatbot
+         ======================================================= -->
+    <div class="slide">
+        <h2 style="margin-bottom:10px;">AI+X PROJECT 01</h2>
+        <p style="margin-bottom:15px; font-size:16px; color:#aaa;">
+            포트폴리오 사이트에 직접 구현한 AI 챗봇 — Multi-Agent & RAG 아키텍처
+        </p>
+
+        <div class="card-box" style="flex:1;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:15px;">
+                <div>
+                    <span style="color:var(--accent); font-weight:700; font-size:14px;">Interactive AI Assistant</span>
+                    <h1 style="font-size:38px; margin-bottom:5px;">Nano-YJ</h1>
+                    <p style="font-size:14px; color:#ccc;">포트폴리오 탐색을 돕는 AI 챗봇 어시스턴트</p>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:22px; font-weight:800; color:var(--accent);">Multi-Agent</div>
+                    <div style="font-size:12px; color:#888;">RAG + LLM Orchestration</div>
+                </div>
+            </div>
+
+            <!-- 챗봇 UI 스크린샷 + 아이콘 -->
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <!-- 챗봇 아이콘 -->
+                <div style="flex:0 0 80px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#1a1a1a; border-radius:12px; padding:15px;">
+                    <div style="width:50px; height:50px; background:linear-gradient(135deg, rgba(107,188,198,0.3), rgba(157,183,213,0.3)); border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid rgba(107,188,198,0.5); margin-bottom:8px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="8" r="4" fill="#6BBCC6"/>
+                            <rect x="6" y="14" width="12" height="8" rx="2" fill="#9DB7D5"/>
+                            <circle cx="9" cy="6" r="1" fill="#D4FF00"/>
+                            <circle cx="15" cy="6" r="1" fill="#D4FF00"/>
+                        </svg>
+                    </div>
+                    <span style="font-size:10px; color:#888; text-align:center;">FAB Icon</span>
+                </div>
+
+                <!-- 다크모드 UI -->
+                <div style="flex:1; background:#1a1a1a; border-radius:12px; padding:12px; border:1px solid #333;">
+                    <div style="font-size:9px; color:var(--accent); margin-bottom:8px; font-weight:700;">DARK MODE</div>
+                    <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:10px; border:1px solid rgba(255,255,255,0.15);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:8px;">
+                            <span style="font-size:10px; font-weight:700; color:#fff;">Nano-YJ — AI Assistant</span>
+                            <div style="display:flex; gap:4px;">
+                                <span style="font-size:8px; background:rgba(107,188,198,0.3); padding:2px 6px; border-radius:4px; color:#fff;">EN</span>
+                                <span style="font-size:8px; color:#888;">✕</span>
+                            </div>
+                        </div>
+                        <div style="background:rgba(157,183,213,0.15); border-radius:8px; padding:6px 8px; margin-bottom:6px;">
+                            <span style="font-size:8px; color:#ddd;">안녕하세요, Nano-YJ입니다...</span>
+                        </div>
+                        <div style="display:flex; gap:4px; flex-wrap:wrap;">
+                            <span style="font-size:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:3px 6px; color:#aaa;">경력 보기</span>
+                            <span style="font-size:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:3px 6px; color:#aaa;">프로젝트</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라이트모드 UI -->
+                <div style="flex:1; background:#f5f5f5; border-radius:12px; padding:12px; border:1px solid #ddd;">
+                    <div style="font-size:9px; color:#667eea; margin-bottom:8px; font-weight:700;">LIGHT MODE</div>
+                    <div style="background:#fff; border-radius:10px; padding:10px; border:1px solid #e0e0e0; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; border-bottom:1px solid #eee; margin-bottom:8px;">
+                            <span style="font-size:10px; font-weight:700; color:#333;">Nano-YJ — AI Assistant</span>
+                            <div style="display:flex; gap:4px;">
+                                <span style="font-size:8px; background:linear-gradient(135deg,#667eea,#764ba2); padding:2px 6px; border-radius:4px; color:#fff;">한국어</span>
+                                <span style="font-size:8px; color:#999;">✕</span>
+                            </div>
+                        </div>
+                        <div style="background:#f0f4ff; border-radius:8px; padding:6px 8px; margin-bottom:6px;">
+                            <span style="font-size:8px; color:#444;">Hello, I am Nano-YJ...</span>
+                        </div>
+                        <div style="display:flex; gap:4px; flex-wrap:wrap;">
+                            <span style="font-size:7px; background:#fff; border:1px solid #ddd; border-radius:10px; padding:3px 6px; color:#666;">Career</span>
+                            <span style="font-size:7px; background:#fff; border:1px solid #ddd; border-radius:10px; padding:3px 6px; color:#666;">Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 시스템 아키텍처 (간소화) -->
+            <div class="visual-box" style="padding:12px; background:#1a1a1a; height:auto; margin-bottom:12px;">
+                <svg viewBox="0 0 720 130" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="nodeGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3a3a3a"/>
+                            <stop offset="100%" style="stop-color:#2a2a2a"/>
+                        </linearGradient>
+                    </defs>
+
+                    <text x="360" y="16" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">System Architecture — Multi-Agent RAG Pipeline</text>
+
+                    <!-- User -->
+                    <rect x="55" y="35" width="70" height="40" rx="5" fill="url(#nodeGrad5)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="90" y="52" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">USER</text>
+                    <text x="90" y="64" text-anchor="middle" fill="#fff" font-size="7">Query</text>
+
+                    <path d="M130 55 L155 55" stroke="#D4FF00" stroke-width="2" marker-end="url(#arrN)"/>
+                    <defs><marker id="arrN" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto"><path d="M0,0 L4,2 L0,4 Z" fill="#D4FF00"/></marker></defs>
+
+                    <!-- Orchestrator -->
+                    <rect x="160" y="30" width="90" height="50" rx="6" fill="#252525" stroke="#D4FF00" stroke-width="1.5"/>
+                    <text x="205" y="48" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">ORCHESTRATOR</text>
+                    <text x="205" y="60" text-anchor="middle" fill="#fff" font-size="7">Intent Router</text>
+                    <text x="205" y="70" text-anchor="middle" fill="#888" font-size="6">의도 분류</text>
+
+                    <path d="M255 45 L285 35" stroke="#666" stroke-width="1"/>
+                    <path d="M255 55 L285 55" stroke="#D4FF00" stroke-width="1.5"/>
+                    <path d="M255 65 L285 75" stroke="#666" stroke-width="1"/>
+
+                    <!-- Agents -->
+                    <rect x="290" y="25" width="75" height="22" rx="3" fill="url(#nodeGrad5)" stroke="#555"/>
+                    <text x="327" y="39" text-anchor="middle" fill="#aaa" font-size="7">Career Agent</text>
+
+                    <rect x="290" y="50" width="75" height="22" rx="3" fill="url(#nodeGrad5)" stroke="#D4FF00"/>
+                    <text x="327" y="64" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Project Agent</text>
+
+                    <rect x="290" y="75" width="75" height="22" rx="3" fill="url(#nodeGrad5)" stroke="#555"/>
+                    <text x="327" y="89" text-anchor="middle" fill="#aaa" font-size="7">General Agent</text>
+
+                    <path d="M370 36 L395 50" stroke="#666" stroke-width="1"/>
+                    <path d="M370 61 L395 55" stroke="#D4FF00" stroke-width="1.5"/>
+                    <path d="M370 86 L395 65" stroke="#666" stroke-width="1"/>
+
+                    <!-- RAG -->
+                    <rect x="400" y="35" width="100" height="45" rx="6" fill="#1e1e1e" stroke="#D4FF00" stroke-width="1.5"/>
+                    <text x="450" y="50" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">RAG ENGINE</text>
+                    <text x="450" y="62" text-anchor="middle" fill="#fff" font-size="7">Context Retrieval</text>
+                    <text x="450" y="72" text-anchor="middle" fill="#888" font-size="6">문서 검색/임베딩</text>
+
+                    <path d="M505 57 L530 57" stroke="#D4FF00" stroke-width="2" marker-end="url(#arrN)"/>
+
+                    <!-- LLM -->
+                    <rect x="535" y="35" width="75" height="45" rx="5" fill="url(#nodeGrad5)" stroke="#D4FF00" stroke-width="2"/>
+                    <text x="572" y="52" text-anchor="middle" fill="#D4FF00" font-size="8" font-weight="700">GPT-4o</text>
+                    <text x="572" y="64" text-anchor="middle" fill="#fff" font-size="7">Response Gen</text>
+
+                    <path d="M615 57 L640 57" stroke="#D4FF00" stroke-width="2"/>
+
+                    <!-- Output -->
+                    <circle cx="660" cy="57" r="15" fill="#D4FF00"/>
+                    <text x="660" y="61" text-anchor="middle" fill="#111" font-size="10" font-weight="800">💬</text>
+
+                    <!-- Features -->
+                    <rect x="110" y="100" width="70" height="22" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="145" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">다국어 KO/EN</text>
+
+                    <rect x="195" y="100" width="70" height="22" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="230" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Dark/Light</text>
+
+                    <rect x="280" y="100" width="70" height="22" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="315" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">음성 입력</text>
+
+                    <rect x="365" y="100" width="70" height="22" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="400" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">응답 캐싱</text>
+
+                    <rect x="450" y="100" width="70" height="22" rx="3" fill="#1e1e1e" stroke="#333"/>
+                    <text x="485" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Rate Limit</text>
+
+                    <rect x="535" y="100" width="80" height="22" rx="3" fill="#1e1e1e" stroke="#D4FF00"/>
+                    <text x="575" y="114" text-anchor="middle" fill="#D4FF00" font-size="7" font-weight="700">Vercel Edge</text>
+                </svg>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:6px; display:inline-block; margin-bottom:10px; font-size:14px;">기획 의도 & 핵심 기능</h3>
+                    <ul class="work-list" style="font-size:12px;">
+                        <li><span class="strong">목적:</span> 인사담당자가 포트폴리오 탐색 시 필요한 정보를 빠르게 제공</li>
+                        <li><span class="strong">Multi-Agent:</span> Orchestrator가 의도를 분류하여 전문 에이전트로 라우팅</li>
+                        <li><span class="strong">RAG:</span> 이력서/프로젝트 문서 검색으로 근거 기반 답변 생성</li>
+                        <li><span class="strong">UX:</span> 다국어, 테마 전환, 음성 입력, 단축키 지원</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom:2px solid var(--accent); padding-bottom:6px; display:inline-block; margin-bottom:10px; font-size:14px;">Tech Stack</h3>
+                    <ul class="work-list" style="font-size:12px;">
+                        <li><span class="strong">Frontend:</span> Vanilla JS · Glassmorphism UI · CSS Animation</li>
+                        <li><span class="strong">Backend:</span> Vercel Serverless Functions · Edge Runtime</li>
+                        <li><span class="strong">AI/LLM:</span> OpenAI GPT-4o · Prompt Engineering</li>
+                        <li><span class="strong">최적화:</span> 응답 캐싱 · Rate Limiting · Fallback</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         PAGE 9: OUTRO (Vision)
+         ======================================================= -->
+    <div class="slide">
+        <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background: radial-gradient(circle at 50% 30%, #222 0%, #111 60%); margin:-50px;">
+            
+            <h1 style="font-size: 42px; line-height: 1.4; color: #fff; margin-bottom: 40px;">
+                로드맵과 품질을 조화롭게 잇고<br>
+                함께 실행하는<br><span style="color:var(--accent); text-decoration: underline;">Backend System Planner</span>가 되겠습니다.
+            </h1>
+            
+            <p style="font-size: 16px; max-width: 600px; color: #ccc; line-height: 1.8; margin-bottom: 60px;">
+                "필요 절차의 가치와 업무 본연의 방향을 지키면서<br>
+                시장 가치 분석을 통해 변화하는 프로세스에 대응합니다.<br><br>
+                데이터와 사용자 관점에서 끊임없이 'Why'를 묻고,<br>
+                기업의 지속 성장을 이끄는 동료가 되겠습니다."
+            </p>
+
+            <div style="border: 1px solid var(--accent); padding: 30px 60px; background: rgba(212, 255, 0, 0.05);">
+                <div style="margin-bottom: 15px;">
+                    <span style="color:var(--accent); font-weight:800; margin-right:15px; text-transform:uppercase;">E-mail</span>
+                    <span style="color:#fff; font-size: 20px;">yujin2ee@naver.com</span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span style="color:var(--accent); font-weight:800; margin-right:15px; text-transform:uppercase;">Phone</span>
+                    <span style="color:#fff; font-size: 20px;">010-3339-1430</span>
+                </div>
+                <div>
+                    <span style="color:var(--accent); font-weight:800; margin-right:15px; text-transform:uppercase;">Portfolio</span>
+                    <a href="https://yjportfoliosite.vercel.app" target="_blank" style="color:#fff; font-size: 20px; text-decoration:underline;">yjportfoliosite.vercel.app</a>
+                </div>
+            </div>
+
+            <p style="margin-top:30px; font-size:14px; color:#aaa; background:rgba(255,255,255,0.05); padding:15px 30px; border-radius:8px;">
+                웹 포트폴리오에 방문하시면 더 자세한 프로젝트 내용과 인터랙티브 데모를 확인하실 수 있습니다.
+            </p>
+
+            <p style="margin-top:60px; font-size:12px; color:#555;">© 2025 YUJIN LEE. All Rights Reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

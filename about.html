@@ -3,9 +3,36 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>About | Y.J. LEE</title>
+<title>About | YUJIN LEE - AI Product Planner</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="이유진 소개 - 데이터 기반 의사결정과 사용자 중심 기획을 핵심 역량으로 하는 AI Product Planner. 이투온, 금성출판사 경력."/>
+<meta name="keywords" content="이유진, YUJIN LEE, AI Product Planner, PM, 경력, 이투온, 금성출판사"/>
+<meta name="author" content="YUJIN LEE"/>
+<link rel="canonical" href="https://yjportfoliosite.vercel.app/about.html"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile"/>
+<meta property="og:title" content="About | YUJIN LEE - AI Product Planner"/>
+<meta property="og:description" content="이유진 소개 - 데이터 기반 의사결정과 사용자 중심 기획을 핵심 역량으로 하는 AI Product Planner"/>
+<meta property="og:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+<meta property="og:url" content="https://yjportfoliosite.vercel.app/about.html"/>
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#667eea"/>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <link rel="stylesheet" href="assets/styles.css"/>
 <link rel="stylesheet" href="assets/about.css"/>
+<link rel="icon" href="assets/images/profile.png"/>
 </head>
 <body class="about-body">
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -14,15 +41,16 @@
   <div class="dust-layer" aria-hidden="true"></div>
 
   <!-- NAV (사이트 기본 유지) -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="메인 내비게이션">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
-      <ul class="nav-menu">
-        <li><a class="nav-link" href="index.html">HOME</a></li>
-        <li><a class="nav-link active" href="about.html">ABOUT</a></li>
-        <li><a class="nav-link" href="projects.html">PROJECT</a></li>
+      <a href="index.html" class="nav-logo" aria-label="홈페이지로 이동"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a class="nav-link" href="index.html" role="menuitem">HOME</a></li>
+        <li role="none"><a class="nav-link active" href="about.html" role="menuitem" aria-current="page">ABOUT</a></li>
+        <li role="none"><a class="nav-link" href="projects.html" role="menuitem">PROJECT</a></li>
+        <li role="none"><a class="nav-link" href="en/about.html" role="menuitem" style="color:#6BBCC6">EN</a></li>
       </ul>
-      <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+      <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
     </div>
   </nav>
   <div class="page-space"></div>
@@ -383,5 +411,9 @@
   <!-- Nano-YJ Scripts -->
   <script src="./assets/chatbot-scenarios.js"></script>
   <script src="./assets/chatbot-ui.js"></script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

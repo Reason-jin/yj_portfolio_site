@@ -13,6 +13,13 @@ class NanoYJScenario {
       format: null,
       interviewMode: false
     };
+    // 언어 설정 (외부에서 주입)
+    this.language = 'ko';
+  }
+
+  // 언어 설정
+  setLanguage(lang) {
+    this.language = lang;
   }
 
   // 프로젝트 매핑
@@ -275,14 +282,74 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
 
   // 흐름 시작
   getIntro() {
+    if (this.language === 'en') {
+      return {
+        type: 'intro',
+        message: 'Hello, I am <b>Nano-YJ</b>.<br/><br/>Feel free to ask any questions about YUJIN LEE. I can help you with career info, projects, and skills.<br/><br/><span style="color:rgba(255,255,255,0.5); font-size:0.8rem;">Shortcuts: ESC(close) / /(focus) / Ctrl+Shift+L(theme)</span>',
+        choices: [
+          { label: 'View Career & Resume', action: 'show_resume' },
+          { label: 'Explore Projects', action: 'show_projects' },
+          { label: 'Core Competencies', action: 'rag_strength' },
+          { label: 'Free Question (AI)', action: 'start_rag_mode' },
+          { label: 'Toggle Theme', action: 'toggle_theme' },
+          { label: 'Settings', action: 'show_settings' }
+        ],
+        allowFreetext: true
+      };
+    }
     return {
       type: 'intro',
-      message: '안녕하세요, 저는 Nano-YJ입니다. 무엇을 도와드릴까요?',
+      message: '안녕하세요, 저는 <b>Nano-YJ</b>입니다.<br/><br/>YUJIN LEE에 대해 궁금한 점을 자유롭게 질문해주세요. 경력, 프로젝트, 역량 등 다양한 정보를 안내해드립니다.<br/><br/><span style="color:rgba(255,255,255,0.5); font-size:0.8rem;">단축키: ESC(닫기) / /(입력) / Ctrl+Shift+L(테마)</span>',
       choices: [
-        { label: '면접 모드 (면접관처럼 질문하기)', action: 'start_interview_mode' },
-        { label: '프로젝트 추천받기', action: 'start_interview' },
-        { label: '이력서 보기', action: 'show_resume' },
-        { label: '전체 프로젝트 보기', action: 'show_projects' }
+        { label: '경력 및 이력 보기', action: 'show_resume' },
+        { label: '프로젝트 탐색', action: 'show_projects' },
+        { label: '핵심 역량 소개', action: 'rag_strength' },
+        { label: '자유 질문 (AI 검색)', action: 'start_rag_mode' },
+        { label: '테마 변경', action: 'toggle_theme' },
+        { label: '설정', action: 'show_settings' }
+      ],
+      allowFreetext: true
+    };
+  }
+
+  // 면접 시뮬레이션 모드
+  getSimulationMode() {
+    return {
+      type: 'simulation',
+      message: '<b>면접 시뮬레이션</b>을 시작합니다!<br/><br/>실제 면접처럼 제가 면접관 역할을 하고, 당신이 YUJIN LEE가 되어 답변해보세요.<br/>5개 질문 후 피드백을 드립니다.<br/><br/>준비되셨으면 "시작"이라고 입력하세요.',
+      choices: [
+        { label: '시작하기', action: 'begin_simulation' },
+        { label: '이전으로', action: 'back_to_intro' }
+      ],
+      allowFreetext: true
+    };
+  }
+
+  // RAG 문서 검색 모드
+  getRAGMode() {
+    if (this.language === 'en') {
+      return {
+        type: 'rag_mode',
+        message: '<b>AI Search Mode</b><br/><br/>I search through YUJIN LEE\'s resume and project reports to answer your questions.<br/><br/>Feel free to ask anything!',
+        choices: [
+          { label: 'MetraForge AI results?', action: 'rag_metraforge' },
+          { label: 'SmartStock tech stack?', action: 'rag_smartstock' },
+          { label: 'YUJIN\'s strengths?', action: 'rag_strength' },
+          { label: 'Career summary', action: 'rag_career' },
+          { label: 'Go Back', action: 'back_to_intro' }
+        ],
+        allowFreetext: true
+      };
+    }
+    return {
+      type: 'rag_mode',
+      message: '<b>AI 검색 모드</b>입니다.<br/><br/>YUJIN LEE의 이력서, 프로젝트 보고서 등에서 정보를 검색해 답변합니다.<br/><br/>궁금한 내용을 자유롭게 질문하세요!',
+      choices: [
+        { label: 'MetraForge AI 성과는?', action: 'rag_metraforge' },
+        { label: 'SmartStock 기술 스택?', action: 'rag_smartstock' },
+        { label: 'YUJIN의 강점?', action: 'rag_strength' },
+        { label: '경력 요약', action: 'rag_career' },
+        { label: '이전으로', action: 'back_to_intro' }
       ],
       allowFreetext: true
     };
@@ -294,17 +361,17 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
       type: 'interview_mode',
       message: '면접관이 되어 이유진님에게 질문해보세요. 일반적인 면접 질문을 선택하거나, 직접 질문을 입력하실 수 있습니다.',
       choices: [
-        { label: '간단히 자기소개 부탁드립니다', action: 'ask_introduction' },
-        { label: '본인의 가장 큰 강점은?', action: 'ask_strength' },
+        { label: '자기소개 부탁드립니다', action: 'ask_introduction' },
+        { label: '가장 큰 강점은?', action: 'ask_strength' },
         { label: '약점이나 개선점은?', action: 'ask_weakness' },
-        { label: '우리 회사 지원 이유는?', action: 'ask_motivation' },
-        { label: '가장 기억에 남는 프로젝트는?', action: 'ask_project_experience' },
+        { label: '지원 이유는?', action: 'ask_motivation' },
+        { label: '기억에 남는 프로젝트는?', action: 'ask_project_experience' },
         { label: '팀원과 갈등 경험은?', action: 'ask_conflict' },
         { label: '실패 경험과 배운 점은?', action: 'ask_failure' },
         { label: '5년 후 모습은?', action: 'ask_future' },
         { label: '역량 분석 보기', action: 'show_competency_analysis' },
         { label: '통계 보기', action: 'show_stats' },
-        { label: '메인으로 돌아가기', action: 'back_to_intro' }
+        { label: '이전으로', action: 'back_to_intro' }
       ],
       allowFreetext: true
     };
@@ -323,9 +390,9 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
       sources: qa.sources || [],
       choices: [
         { label: '다른 질문하기', action: 'continue_interview_mode' },
-        { label: '프로젝트 자세히 보기', action: 'show_projects' },
+        { label: '프로젝트 보기', action: 'show_projects' },
         { label: '이력서 다운로드', action: 'download_resume' },
-        { label: '메인으로 돌아가기', action: 'back_to_intro' }
+        { label: '이전으로', action: 'back_to_intro' }
       ],
       allowFreetext: true
     };
@@ -392,9 +459,8 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
         ]
       },
       choices: [
-        { label: '미리보기', action: 'show_resume_preview' },
         { label: 'PDF 다운로드', action: 'download_resume' },
-        { label: '돌아가기', action: 'back_to_intro' }
+        { label: '이전으로', action: 'back_to_intro' }
       ]
     };
   }
@@ -410,7 +476,7 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
         action: 'select_project',
         projectId: key
       })).concat([
-        { label: '메인으로 돌아가기', action: 'back_to_intro' }
+        { label: '이전으로', action: 'back_to_intro' }
       ]),
       allowFreetext: false
     };
@@ -427,7 +493,7 @@ MBC 아카데미에서 진행한 SmartStock AI 학습 프로젝트에서 완벽�
       project: project,
       choices: [
         { label: '다른 프로젝트', action: 'back_to_projects' },
-        { label: '닫기', action: 'close' }
+        { label: '이전으로', action: 'back_to_intro' }
       ]
     };
   }

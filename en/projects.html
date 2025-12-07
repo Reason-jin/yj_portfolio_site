@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | YUJIN LEE - AI Project Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="YUJIN LEE's AI Projects - MetraForge AI (Quality Prediction), SmartStock AI (Demand Forecasting), iTory (Story Generation), 10-Second Challenge (Pose Recognition)"/>
+    <meta name="keywords" content="MetraForge AI, SmartStock AI, iTory, 10-Second Challenge, AI Projects, PM Portfolio"/>
+    <meta name="author" content="YUJIN LEE"/>
+    <link rel="canonical" href="https://yjportfoliosite.vercel.app/en/projects.html"/>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Projects | YUJIN LEE - AI Project Portfolio"/>
+    <meta property="og:description" content="MetraForge AI, SmartStock AI, iTory, 10-Second Challenge AI Projects"/>
+    <meta property="og:image" content="https://yjportfoliosite.vercel.app/docs/yujinlee.png"/>
+    <meta property="og:url" content="https://yjportfoliosite.vercel.app/en/projects.html"/>
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#667eea"/>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/projects.css">
+    <link rel="icon" href="../assets/images/profile.png"/>
+    <link rel="alternate" hreflang="ko" href="https://yjportfoliosite.vercel.app/projects.html"/>
+    <link rel="alternate" hreflang="en" href="https://yjportfoliosite.vercel.app/en/projects.html"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght+100;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-logo" aria-label="Go to homepage"><span class="logo-text">Y.J. LEE | Portfolio</span></a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a class="nav-link" href="./index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a class="nav-link" href="./about.html" role="menuitem">ABOUT</a></li>
+                <li role="none"><a class="nav-link active" href="./projects.html" role="menuitem" aria-current="page">PROJECT</a></li>
+                <li role="none"><a class="nav-link" href="../projects.html" role="menuitem" style="color:#6BBCC6">한국어</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </nav>
+
+    <section class="projects-section">
+        <div class="container-full">
+            <div class="project-tabs-wrap">
+                <button class="project-tab-btn active" data-project="aitory">iTory</button>
+                <button class="project-tab-btn" data-project="metraforge">MetraForge AI</button>
+                <button class="project-tab-btn" data-project="smartstock">SmartStock AI</button>
+                <button class="project-tab-btn" data-project="tensecond">10-Second Challenge</button>
+            </div>
+        </div>
+
+        <div class="projects-container">
+
+            <!-- MetraForge -->
+            <div class="project-item" data-project="metraforge">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">K-AI Competition Entry</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">Manufacturing Quality System</span>
+                    </div>
+                    <h1>MetraForge AI</h1>
+                    <p class="project-subtitle">AI-Based Intelligent Metal Processing Quality System</p>
+                    <p class="project-summary">A Tabular + TCN hybrid AI quality assurance system that detects metal extrusion defects in advance. Transforms time-series sensor data into predictability, innovating experience-based judgment into data-driven early warning systems.</p>
+                </div>
+
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <div class="project-placeholder">
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="../docs/metraforge_final_report.pdf" class="btn btn-primary">Final Report</a>
+                        <a href="../docs/metraforge_presentation.pdf" class="btn btn-secondary">Presentation</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-metraforge" class="sticky-nav-item active" data-section="strategy-metraforge">Strategy</a>
+                        <a href="#metrics-metraforge" class="sticky-nav-item" data-section="metrics-metraforge">Metrics</a>
+                        <a href="#tech-metraforge" class="sticky-nav-item" data-section="tech-metraforge">Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    <div class="project-planning highlight-section" id="strategy-metraforge">
+                        <h3 class="project-section-title">PM Approach</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">Real-World Problem Definition</div>
+                                <p class="planning-card-text">Extremely controlling FP (false positives) to reduce field alert fatigue and create practical value</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Hybrid Model Strategy</div>
+                                <p class="planning-card-text">Static (RandomForest) + Time-series (TCN) two-track ensemble for improved prediction precision</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">XAI-Based Trust Building</div>
+                                <p class="planning-card-text">SHAP-based local feature importance to secure field worker trust in AI systems</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Preemptive Lead Time</div>
+                                <p class="planning-card-text">Securing minimum 1-minute detection lead time before process defects for proactive response</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-metraforge">
+                        <h3 class="project-section-title">AI Model Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">0.9667</div>
+                                <div class="metric-label">Soft Ensemble PR-AUC</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">0.9983</div>
+                                <div class="metric-label">Soft Ensemble ROC-AUC</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">1.3%→0%</div>
+                                <div class="metric-label">Missing Rate Improvement</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">≥1min</div>
+                                <div class="metric-label">Detection Lead Time Median</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-metraforge">
+                        <h3 class="project-section-title">Tech Stack & Data</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">Data</span>
+                                <span class="tech-value">PLC 5-sec logs · 17K rows × 20 cols</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Model</span>
+                                <span class="tech-value">TCN+Tabular Soft·Cascade Ensemble</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Preprocessing</span>
+                                <span class="tech-value">Anomaly Detection · Normalization</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Environment</span>
+                                <span class="tech-value">FastAPI, Streamlit MVP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartStock -->
+            <div class="project-item" data-project="smartstock">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">B2B Demand Forecasting Solution</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">AIX Project</span>
+                    </div>
+                    <h1>SmartStock AI</h1>
+                    <p class="project-subtitle">AI Demand Forecasting + Inventory Policy Solution for B2B Manufacturing & Distribution</p>
+                    <p class="project-summary">Automatic data cleaning, forecasting, and optimal ordering policy calculation with just CSV upload, without ERP/WMS integration. Supports cost reduction and optimal inventory management through Human + AI collaboration.</p>
+                </div>
+
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <img src="../docs/smartstock.png" alt="SmartStock AI Dashboard" loading="lazy">
+                    </div>
+                    <div class="project-actions container">
+                        <a href="../docs/smartstock_final_report.pdf" class="btn btn-primary">Final Report</a>
+                        <a href="../docs/smartstock_planning.pdf" class="btn btn-secondary">Planning Doc</a>
+                        <a href="../docs/smartstock_user_guide.pdf" class="btn btn-secondary">User Guide</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-smartstock" class="sticky-nav-item active" data-section="strategy-smartstock">Strategy</a>
+                        <a href="#metrics-smartstock" class="sticky-nav-item" data-section="metrics-smartstock">Metrics</a>
+                        <a href="#tech-smartstock" class="sticky-nav-item" data-section="tech-smartstock">Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    <div class="project-planning highlight-section" id="strategy-smartstock">
+                        <h3 class="project-section-title">PM Approach</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">Boundary-Free Solution Design</div>
+                                <p class="planning-card-text">SME-customized platform structure with full automation through CSV upload alone</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Hyper-Parameter Auto Search</div>
+                                <p class="planning-card-text">Auto-calculate and suggest optimal inventory policy values based on AI prediction results</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Automated Data Quality</div>
+                                <p class="planning-card-text">Auto-detect and clean missing values, outliers, duplicates upon upload</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Policy Simulation Environment</div>
+                                <p class="planning-card-text">AI Copilot enables natural language data queries and virtual policy simulations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-smartstock">
+                        <h3 class="project-section-title">Model Validation</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">14.2%</div>
+                                <div class="metric-label">WAPE (Prediction Error)</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">96.3%</div>
+                                <div class="metric-label">Fill Rate</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">3 weeks</div>
+                                <div class="metric-label">MVP Prototype Build</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">End-to-End</div>
+                                <div class="metric-label">Full Automation Pipeline</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-smartstock">
+                        <h3 class="project-section-title">Tech Stack & Data</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">Frontend</span>
+                                <span class="tech-value">React · TypeScript · D3.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Backend</span>
+                                <span class="tech-value">FastAPI · MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI Engine</span>
+                                <span class="tech-value">LSTM + CNN Hybrid Forecast</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Core Policies</span>
+                                <span class="tech-value">SS · ROP · EOQ · MLflow Tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10-Second Challenge -->
+            <div class="project-item" data-project="tensecond">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">Gamification Pose Recognition</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">Rapid Prototype</span>
+                    </div>
+                    <h1>10-Second Challenge</h1>
+                    <p class="project-subtitle">AI-Based Pose Challenge Photography Service</p>
+                    <p class="project-summary">Provides game-like experience with pose accuracy recognition and auto-capture. Real-time pose recognition with YOLOv8 Pose + MediaPipe provides accuracy feedback and generates photo+video outputs.</p>
+                </div>
+
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap">
+                        <iframe src="https://drive.google.com/file/d/1L0qhppeYbzSdg99d1-th5aWeSIW-xS54/preview" width="100%" height="600" allow="autoplay" frameborder="0"></iframe>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="../docs/10sec_presentation.pdf" class="btn btn-primary">Presentation</a>
+                        <a href="https://drive.google.com/file/d/1L0qhppeYbzSdg99d1-th5aWeSIW-xS54/view?usp=sharing" class="btn btn-secondary" target="_blank">Demo Video</a>
+                        <a href="../docs/10sec_WBS_R&R.pdf" class="btn btn-secondary" download>R&R & WBS</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-tensecond" class="sticky-nav-item active" data-section="strategy-tensecond">Strategy</a>
+                        <a href="#metrics-tensecond" class="sticky-nav-item" data-section="metrics-tensecond">Metrics</a>
+                        <a href="#tech-tensecond" class="sticky-nav-item" data-section="tech-tensecond">Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    <div class="project-planning highlight-section" id="strategy-tensecond">
+                        <h3 class="project-section-title">Service Design</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">Pose Challenge + Auto Capture</div>
+                                <p class="planning-card-text">Real-time pose accuracy measurement with auto-capture on accuracy threshold for gamified experience</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Hybrid Pose Recognition</div>
+                                <p class="planning-card-text">MediaPipe (real-time/low-spec) + YOLOv8 Pose (precision/multi-person) for 99% webcam recognition</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Output Generation & Sharing</div>
+                                <p class="planning-card-text">Photo+video outputs with SNS sharing optimization for MZ generation viral marketing</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Entertainment UX Design</div>
+                                <p class="planning-card-text">Game/challenge format applicable to experience spaces, events, and promotional booths</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-tensecond">
+                        <h3 class="project-section-title">Service Capability</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">99%</div>
+                                <div class="metric-label">Pose Recognition Accuracy</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">1~4</div>
+                                <div class="metric-label">Simultaneous Person Support</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Concept Pose Sets</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">Photo+Video</div>
+                                <div class="metric-label">Output Delivery</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-tensecond">
+                        <h3 class="project-section-title">Tech Stack</h3>
+                        <div class="tech-items-grid five-item-layout">
+                            <div class="tech-item">
+                                <span class="tech-category">Environment</span>
+                                <span class="tech-value">Python · Streamlit</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI Model</span>
+                                <span class="tech-value">YOLOv8 Real-time Pose</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">UX</span>
+                                <span class="tech-value">Gamification · Leaderboard</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Features</span>
+                                <span class="tech-value">Session Recording · Performance Tracking</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Data</span>
+                                <span class="tech-value">Webcam Streaming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iTory -->
+            <div class="project-item active" data-project="aitory">
+                <div class="project-hero-wrap container">
+                    <div class="project-badge-group">
+                        <span class="project-badge primary">In Progress</span>
+                        <span class="project-badge">2025</span>
+                        <span class="project-badge">AI Fairy Tale Platform</span>
+                    </div>
+                    <h1>iTory</h1>
+                    <p class="project-subtitle">AI-Based Interactive Fairy Tale Video Generation Platform</p>
+                    <p class="project-summary">A customized fairy tale video platform for children ages 5-11. Regenerates the same story in 5 visual styles (Live/2D Animation/3D Cartoon/Pixar/Watercolor) with 5-act structure (Setup/Development/Crisis/Climax/Resolution) producing 2:30 videos.</p>
+                </div>
+
+                <div class="project-visual-wrap">
+                    <div class="project-image-wrap itory-slideshow-wrap">
+                        <div class="itory-slideshow">
+                            <div class="itory-slide-track">
+                                <img src="../docs/itory1.PNG" alt="iTory Screen 1" loading="lazy">
+                                <img src="../docs/itory2.PNG" alt="iTory Screen 2" loading="lazy">
+                                <img src="../docs/itory3.PNG" alt="iTory Screen 3" loading="lazy">
+                                <img src="../docs/itory4.PNG" alt="iTory Screen 4" loading="lazy">
+                                <img src="../docs/itory5.PNG" alt="iTory Screen 5" loading="lazy">
+                                <img src="../docs/itory6.PNG" alt="iTory Screen 6" loading="lazy">
+                                <img src="../docs/itory7.PNG" alt="iTory Screen 7" loading="lazy">
+                                <img src="../docs/itory8.PNG" alt="iTory Screen 8" loading="lazy">
+                                <img src="../docs/itory9.PNG" alt="iTory Screen 9" loading="lazy">
+                                <img src="../docs/itory10.PNG" alt="iTory Screen 10" loading="lazy">
+                                <img src="../docs/itory11.PNG" alt="iTory Screen 11" loading="lazy">
+                                <img src="../docs/itory12.PNG" alt="iTory Screen 12" loading="lazy">
+                                <!-- Loop duplicates -->
+                                <img src="../docs/itory1.PNG" alt="iTory Screen 1" loading="lazy">
+                                <img src="../docs/itory2.PNG" alt="iTory Screen 2" loading="lazy">
+                                <img src="../docs/itory3.PNG" alt="iTory Screen 3" loading="lazy">
+                                <img src="../docs/itory4.PNG" alt="iTory Screen 4" loading="lazy">
+                                <img src="../docs/itory5.PNG" alt="iTory Screen 5" loading="lazy">
+                                <img src="../docs/itory6.PNG" alt="iTory Screen 6" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-actions container">
+                        <a href="https://drive.google.com/file/d/1JNPF4smRGib5erz0Xg5EJ0JRZ7LIQyfA/view?usp=drive_link" class="btn btn-primary" target="_blank">System Architecture</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1FumutktX6VZcnG2TZGOnX7ONDWDyPiPC2VMnMi0Tbrc/edit?gid=0#gid=0" class="btn btn-secondary" target="_blank">Tech Stack Doc</a>
+                        <a href="../aitori_growth_simulator.html" class="btn btn-secondary" target="_blank">Growth Simulation</a>
+                    </div>
+                </div>
+
+                <div class="project-sticky-nav-wrap">
+                    <div class="container">
+                        <a href="#strategy-aitory" class="sticky-nav-item active" data-section="strategy-aitory">Strategy</a>
+                        <a href="#metrics-aitory" class="sticky-nav-item" data-section="metrics-aitory">Metrics</a>
+                        <a href="#tech-aitory" class="sticky-nav-item" data-section="tech-aitory">Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="project-details-wrap container">
+                    <div class="project-planning highlight-section" id="strategy-aitory">
+                        <h3 class="project-section-title">PM Approach</h3>
+                        <div class="planning-cards-grid">
+                            <div class="planning-card">
+                                <div class="planning-card-title">5-Style Generation System</div>
+                                <p class="planning-card-text">Multi-style platform design that regenerates the same story in 5 visual styles for child preference choice</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Firebase Gen2 Cost Efficiency</div>
+                                <p class="planning-card-text">Serverless structure with Cloud Functions Gen2 for traffic handling, Firestore for real-time sync</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">5-Act Storytelling Structure</div>
+                                <p class="planning-card-text">Classical narrative structure reflected in AI prompts for story completeness</p>
+                            </div>
+                            <div class="planning-card">
+                                <div class="planning-card-title">Net Profit Structure Design</div>
+                                <p class="planning-card-text">3-tier revenue at Premium $15, Y3 breakeven (8.5%), Y5 operating margin 46.8% target</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-metrics" id="metrics-aitory">
+                        <h3 class="project-section-title">Platform Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">2:30</div>
+                                <div class="metric-label">Video Generation Time</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Visual Style Options</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">55%</div>
+                                <div class="metric-label">Net Profit per Content</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">5-Act</div>
+                                <div class="metric-label">Storytelling Structure</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="project-tech" id="tech-aitory">
+                        <h3 class="project-section-title">Tech Stack & AI</h3>
+                        <div class="tech-items-grid">
+                            <div class="tech-item">
+                                <span class="tech-category">Frontend</span>
+                                <span class="tech-value">React 18 · TypeScript · React Native</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Backend</span>
+                                <span class="tech-value">FastAPI · Firebase Gen2</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">AI Services</span>
+                                <span class="tech-value">GPT-4o-mini · DALL-E 3 · Seedance 2.0</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-category">Infrastructure</span>
+                                <span class="tech-value">Firestore · Cloud Storage · ElevenLabs TTS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="padding:40px 0; text-align:center; color:#b0b0b0; border-top:1px solid rgba(255,255,255,.1)">
+        <div class="container">
+            <div>© 2025 Yujin Lee. All rights reserved.</div>
+            <div style="margin-top:8px; font-size:.95rem; color:#9aa0a6">
+              GitHub: <a href="https://github.com/Reason-jin" target="_blank" style="color:#9DB7D5">Reason-jin</a> ·
+              Email: <a href="mailto:yujin2ee@naver.com" style="color:#9DB7D5">yujin2ee@naver.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/projects.js"></script>
+
+    <!-- Nano-YJ AI Assistant Button -->
+    <button class="nano-yj-launch yj-style-c" aria-label="Start Nano-YJ" data-tip="Nano YJ">
+      <div class="nano-yj-icon">
+        <div class="head"></div>
+        <div class="antenna"></div>
+        <div class="body"></div>
+      </div>
+    </button>
+
+    <!-- Nano-YJ Overlay & Modal -->
+    <div class="nano-overlay"></div>
+    <div class="nano-modal">
+      <div class="nano-header">
+        <div class="title">Nano-YJ — AI Assistant</div>
+        <button class="nano-close">Close</button>
+      </div>
+      <div class="nano-body"></div>
+      <div class="nano-input">
+        <button class="nano-voice-btn" onclick="window.nanoYJUI?.toggleVoiceInput()" title="Voice Input">MIC</button>
+        <input placeholder="Type a message" />
+        <button class="nano-send">Send</button>
+      </div>
+    </div>
+
+    <!-- Nano-YJ Scripts -->
+    <script src="../assets/chatbot-scenarios.js"></script>
+    <script src="../assets/chatbot-ui.js"></script>
+
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

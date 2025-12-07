@@ -41,3 +41,6 @@ docs/10sec_resize.mp4
 # Downloaded binaries
 gh_cli.zip
 bin/
+
+.vercel
+.env*.local

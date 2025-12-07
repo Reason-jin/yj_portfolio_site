@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yjportfoliosite.vercel.app/sitemap.xml
+
+# Disallow API endpoints
+Disallow: /api/
+
+# Disallow node_modules
+Disallow: /node_modules/
